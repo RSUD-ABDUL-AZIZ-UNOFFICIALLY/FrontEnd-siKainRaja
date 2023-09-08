@@ -1,0 +1,177 @@
+.btn-blue{
+    background-color: #3a15df;
+    color: #FFFFFF;
+    border-radius: 7px;
+    box-shadow: 3px 3px 0px 0px #000000;
+    border-color: #000000;
+    border-width: 1px;
+    font-size: 17px;
+    padding: 7px;
+    height: min-content;
+}
+.btn-blue:hover{
+    background-color: #3d1dce;
+}
+.btn-blue:active{
+    background-color: #3d1dce;
+    transform: scale(0.9);
+    transition: 0.2s;
+}
+
+.btn-white{
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px -5px #00000080;
+    font-size: 17px;
+    padding: 7px;
+    height: min-content;
+}
+
+.btn-white:hover{
+    background-color: #e6e6e6;
+}
+.btn-white:active{
+    background-color: #e6e6e6;
+    transform: scale(0.9);
+    transition: 0.2s;
+}
+.dropdown{
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+    z-index: 5;
+    overflow: hidden;
+    
+}
+.btn-dropdown{
+    position: relative;
+    padding: 7px;
+    background-color: #1f1c1c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    min-width: 100%;
+    color: white;
+    z-index: 5;
+
+}
+
+.btn-dropdown:checked{
+    padding: 20px;
+}
+
+.btn-dropdown:hover{
+    background-color: #000000;
+}
+.btn-dropdown:active{
+    background-color: #000000;
+    transform: scale(0.99);
+    transition: 0.3s;
+}
+
+.dropdown-item{
+    padding: 7px;
+    border-width: 1px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: none;
+    border-color: #000000;
+    transition: ease-in-out 0.5s;
+    z-index: 1;
+}
+.dropdown-item-off{
+    padding: 7px;
+    border-width: 1px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: none;
+    border-color: #000000;
+    transition: ease-in-out 0.5s;
+    z-index: 1;
+    top: -15px;
+}
+
+.icon-spin{
+    transform: rotate(90deg);
+    transition: 0.5s;
+}
+.icon-spin-off{
+    transform: rotate(0deg);
+    transition: 0.5s;
+}
+
+.btn-card{
+    /* padding: 7px; */
+    border-radius: 3px;
+    border-width: 1px; 
+    background-color: #e4e4e4;
+    display: grid;
+    width: 100%;
+}
+
+.btn-card-head{
+    text-align: center;
+    padding: 7px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000000;
+}
+.btn-card-body{
+    text-align: center;
+    padding: 7px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.btn-card:hover{
+    background-color: #c0bebe;
+}
+.btn-card:active{
+    background-color: #c0bebe;
+    transform: scale(0.98);
+    transition: 0.3s;
+}
+
+.myModal {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    background-color: #00000060;
+    /* padding: 20px; */
+    padding-top: 40px;
+    padding-bottom: 40px;
+    min-width: 100vw;
+    max-width: 100vw;
+    min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.myModal-item{
+    background-color: #FFFFFF;
+    padding: 7px;
+    width: 95vw;
+    border-radius: 7px;
+    border-color: #000000;
+    border-width:1px;
+    box-shadow: 3px 3px 0px 0px #000000;
+}
+.head-itemDropdown{
+    font-size: 11px;
+    font-weight: bold;
+}
+.body-itemDropdown{
+    font-size: 11px;
+    /* font-weight: bold; */
+}
+.gas{
+    display: grid;
+    text-align: justify;
+}
