@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useState } from 'react'
 import CardPoli from './Component/CardPoli'
 import axios from 'axios'
@@ -33,7 +34,6 @@ export default function Section() {
 
     useEffect(() => {
         setLoading(true)
-        console.log('use effect');
         getData()
     })
 
