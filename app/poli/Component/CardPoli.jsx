@@ -1,6 +1,7 @@
 'use client'
-import React, { useState } from 'react'
-export default function Section() {
+import React, { useEffect, useState } from 'react'
+
+const CardPoli = () => {
     const [modal, setModal] = useState(false)
 
     const handleModal = () => {
@@ -32,38 +33,17 @@ export default function Section() {
             return null
         }
     }
-
     return (
-        <div className='flex justify-center '>
+        <div>
             {renderModal()}
-            <div className='section'>
-                <div className="grid gap-2 grid-cols-2">
-                    <button onClick={() => handleModal()} className="btn-card">
-                        <div className="btn-card-head">Nama Poli</div>
-                        <div className="btn-card-body">
-                            Keterangan
-                        </div>
-                    </button>
-                    <button onClick={() => handleModal()} className="btn-card">
-                        <div className="btn-card-head">Nama Poli</div>
-                        <div className="btn-card-body">
-                            Keterangan
-                        </div>
-                    </button>
-                    <button onClick={() => handleModal()} className="btn-card">
-                        <div className="btn-card-head">Nama Poli</div>
-                        <div className="btn-card-body">
-                            Keterangan
-                        </div>
-                    </button>
-                    <button onClick={() => handleModal()} className="btn-card">
-                        <div className="btn-card-head">Nama Poli</div>
-                        <div className="btn-card-body">
-                            Keterangan
-                        </div>
-                    </button>
+            <button onClick={() => handleModal()} className="btn-card">
+                <div className="btn-card-head">Nama Poli</div>
+                <div className="btn-card-body">
+                    Keterangan
                 </div>
-            </div>
+            </button>
         </div>
     )
 }
+
+export default CardPoli
