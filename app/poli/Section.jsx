@@ -5,7 +5,7 @@ import axios from 'axios'
 
 export default function Section() {
     const [loading, setLoading] = useState(true)
-    const [iniData, setData] = useState([''])
+    const [iniData, setData] = useState('')
 
     const getData = async () => {
         try {
@@ -13,38 +13,49 @@ export default function Section() {
                 method: 'get',
                 url: 'http://103.150.116.254:3000/skr/poli/all',
             });
-            console.log('getData');
 
             if (data.data.data) {
-                if (!iniData) {
-                    setTimeout(() => {
-                        setLoading(false)
-                        setData(data.data.data)
-                    }, 2000)
-                }
+                setData(data.data.data)
+                setTimeout(() => {
+                    setLoading(false)
+                }, 2000)
             } else {
                 setData([''])
                 setLoading(true)
             }
 
         } catch (error) {
-            console.error(error);
+            // console.error(error);
+            setLoading(true)
         }
     }
 
     useEffect(() => {
-        setLoading(true)
         getData()
-    })
+    }, [])
+
+    console.log(iniData);
 
     return (
         <div className='flex justify-center '>
             <div className='section'>
-                <div className="grid gap-2 grid-cols-2">
-                    <CardPoli />
-                    <CardPoli />
-                    <CardPoli />
-                    <CardPoli />
+                <div className="grid gap-2 lg:grid-cols-6 grid-cols-3">
+                    {loading == false ?
+                        iniData.map((item, index) => (
+                            item.kd_poli != '-' ?
+                                <div key={index}>
+                                    <CardPoli
+                                        id={item.kd_poli}
+                                        name={item.nm_poli}
+                                    />
+                                </div>
+                                : null
+                        ))
+                        :
+                        <>
+                            tidak ada data
+                        </>
+                    }
                 </div>
             </div>
         </div>

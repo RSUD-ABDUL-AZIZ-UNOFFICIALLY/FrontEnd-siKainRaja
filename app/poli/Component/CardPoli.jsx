@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 
-const CardPoli = () => {
+const CardPoli = ({ id, name }) => {
     const [modal, setModal] = useState(false)
 
     const handleModal = () => {
@@ -22,7 +22,7 @@ const CardPoli = () => {
                                 </button>
                             </div>
                             <div className="grid">
-                                <h1>Nama Poli</h1>
+                                <h1>{name}</h1>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam nobis reprehenderit nisi non dicta, pariatur nulla omnis cumque! Aperiam deleniti nihil sapiente doloremque, sed est perferendis odio animi minus, veniam non nobis nulla atque molestias magni, vel id repellendus aut.</p>
                             </div>
                         </div>
@@ -37,10 +37,10 @@ const CardPoli = () => {
         <div>
             {renderModal()}
             <button onClick={() => handleModal()} className="btn-card">
-                <div className="btn-card-head">Nama Poli</div>
-                <div className="btn-card-body">
+                <div className="btn-card-head">{name}</div>
+                {/* <div className="btn-card-body">
                     Keterangan
-                </div>
+                </div> */}
             </button>
         </div>
     )

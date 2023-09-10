@@ -27,7 +27,8 @@ body {
 .navbar{
   padding: 12px;
   background-color: #ffffff;
-  width: 90vw;
+  /* min-width: fit-content; */
+  width: fit-content;
   max-width: 90vw;
   display: flex;
   justify-content: space-between;
@@ -82,7 +83,7 @@ body {
 }
 
 .header{
-  width: 100vw;
+  max-width: 100vw;
   background-color: #1e00ff;
   display: flex;
   padding-bottom: 70px;
@@ -121,8 +122,10 @@ body {
 .header-item{
   width: 90vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  transition: ease-in-out 0.5s;
+
 }
 
 .head-text1{
@@ -133,7 +136,7 @@ body {
 }
 .head-text2{
   font-weight: bold;
-  color: #d8ee10;
+  color: #ffee00;
   font-size: 15px;
   margin-top: -8px;
 }
@@ -153,7 +156,13 @@ body {
 }
 
 @media (max-width: 767px) {
+  .header-item{
+    justify-content: flex-start;
+    transition: ease-in-out 0.5s;
+  }
   .navbar{
+    min-width: 90vw;
+    max-width: 90vw;
     overflow: scroll;
     scrollbar-width: none;
     transition: 0.2s;
