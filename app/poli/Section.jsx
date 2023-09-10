@@ -53,7 +53,9 @@ export default function Section() {
                         ))
                         :
                         <>
-                            tidak ada data
+                            <div className="lg:col-span-6 col-span-3">
+                                tidak ada data
+                            </div>
                         </>
                     }
                 </div>
