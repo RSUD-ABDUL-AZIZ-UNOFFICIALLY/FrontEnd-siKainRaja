@@ -26,7 +26,6 @@ export default function Section() {
             }
 
         } catch (error) {
-            // console.error(error);
             setLoading(true)
         }
     }
