@@ -109,7 +109,7 @@
 .btn-card{
     /* padding: 7px; */
     border-radius: 10px;
-    border-width: 1px; 
+    /* border-width: 1px;  */
     background-color: #e4e4e4;
     display: grid;
     justify-content: stretch;
@@ -163,10 +163,16 @@
 .myModal-item{
     background-color: #FFFFFF;
     padding: 15px;
-    width: 80vw;
+    min-width: 80vw;
+    max-width: 80vw;
     border-radius: 20px;
     /* border-color: #000000; */
+    overflow: hidden;
     box-shadow: 5px 5px 10px -5px #0000006b;
+}
+.myModal-table{
+    /* overflow-x: scroll; */
+    max-width: calc(100%);
 }
 .head-itemDropdown{
     font-size: 11px;

@@ -5,17 +5,9 @@ const Footer = () => {
     const scrollUp = () => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth', // Untuk efek pengguliran halus
+            behavior: 'smooth',
         });
     }
-    // useEffect(() => {
-    //     window.addEventListener('scroll', scrollUp);
-
-    //     // Clean up the event listener when the component unmounts
-    //     return () => {
-    //         window.removeEventListener('scroll', scrollUp);
-    //     };
-    // }, []);
     return (
         <button onClick={scrollUp} className='btn-footer'>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-caret-up-fill" viewBox="0 0 16 16">

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import CardPoli from './Component/CardPoli'
 import axios from 'axios'
+import Skeleton from './Component/Skeleton'
 
 export default function Section() {
     const [loading, setLoading] = useState(true)
@@ -16,8 +17,8 @@ export default function Section() {
 
             if (data.data.data) {
                 setData(data.data.data)
+                setLoading(false)
                 setTimeout(() => {
-                    setLoading(false)
                 }, 2000)
             } else {
                 setData([''])
@@ -34,7 +35,13 @@ export default function Section() {
         getData()
     }, [])
 
-    console.log(iniData);
+    const renderNoData = () => {
+        const skeletons = [];
+        for (let i = 0; i < 12; i++) {
+            skeletons.push(<Skeleton key={i} />);
+        }
+        return skeletons;
+    }
 
     return (
         <div className='flex justify-center '>
@@ -51,12 +58,7 @@ export default function Section() {
                                 </div>
                                 : null
                         ))
-                        :
-                        <>
-                            <div className="lg:col-span-6 col-span-3">
-                                tidak ada data
-                            </div>
-                        </>
+                        : renderNoData()
                     }
                 </div>
             </div>

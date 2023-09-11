@@ -1,4 +1,3 @@
-'use client'
 import './globals.css'
 import './item.css'
 import type { Metadata } from 'next'
@@ -19,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
+
     </html>
   )
 }
