@@ -1,44 +1,36 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import { Icon } from 'leaflet';
 
 import 'leaflet/dist/leaflet.css';
 
+import * as maptilersdk from '@maptiler/sdk';
+import "@maptiler/sdk/dist/maptiler-sdk.css";
+
 const Map = () => {
-    const [position, setPosition] = useState([0.8954788548310426, 108.97259936916821])
-    const customIcon = new Icon({
-        iconUrl: '/img/gps.png',
-        iconSize: [32, 32], // Adjust the size as needed
-    })
+    const [iniPosition, setPosition] = useState([108.97269592927742, 0.8955646751394853])
+    const mapContainer = useRef(null);
+    const map = useRef(null);
+    const tokyo = { lng: 139.753, lat: 35.6844 };
+    const [zoom] = useState(12);
+    maptilersdk.config.apiKey = 'YGBPAuY7utv2Y7SgHp2N';
 
     useEffect(() => {
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                const { latitude, longitude } = position.coords;
-                setPosition([latitude, longitude]);
-            }, (error) => {
-                console.error('Error:', error.message);
-            });
-        } else {
-            console.error('Geolocation is not available.');
-        }
+        if (map.current) return; // stops map from intializing more than once
 
-    })
+        map.current = new maptilersdk.Map({
+            container: mapContainer.current,
+            style: maptilersdk.MapStyle.STREETS,
+            center: iniPosition,
+            zoom: zoom
+        });
+
+    }, []);
 
     return (
-        <div >
-            <MapContainer className="map" center={position} zoom={15} scrollWheelZoom={true}>
-                <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                <Marker icon={customIcon} position={position}>
-                    <Popup>
-                        Lokasi Anda
-                    </Popup>
-                </Marker>
-            </MapContainer>
+        <div>
+            <div ref={mapContainer} className="map" />
         </div>
     )
 }

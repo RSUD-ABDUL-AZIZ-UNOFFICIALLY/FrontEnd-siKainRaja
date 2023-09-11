@@ -148,6 +148,7 @@ body {
 .map{
   min-height: 60vh;
   max-height: 60vh;
+  z-index: 50;
 }
 .section{
   padding: 15px;
