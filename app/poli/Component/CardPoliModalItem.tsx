@@ -5,43 +5,66 @@ const CardPoliModalItem = ({ data }: { data: any }) => {
     console.log('data', data);
 
     return (
-        <div className='myModal-table'>
-            <div className="overflow-x-auto">
-                <table className="table">
-                    {/* head */}
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {/* row 1 */}
-                        <tr>
-                            <th>1</th>
-                            <td>Cy Ganderton</td>
-                            <td>Quality Control Specialist</td>
-                            <td>Blue</td>
-                        </tr>
-                        {/* row 2 */}
-                        <tr>
-                            <th>2</th>
-                            <td>Hart Hagerty</td>
-                            <td>Desktop Support Technician</td>
-                            <td>Purple</td>
-                        </tr>
-                        {/* row 3 */}
-                        <tr>
-                            <th>3</th>
-                            <td>Brice Swyre</td>
-                            <td>Tax Accountant</td>
-                            <td>Red</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div className='myModal-item-section'>
+            {data != '' ?
+                <div className="overflow-x-auto">
+                    <table className="table">
+                        {/* head */}
+                        <thead>
+                            <tr className='text-center'>
+                                <th className=''>Hari</th>
+                                <th className=''>Waktu</th>
+                                <th className=''>Dokter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {/* row 1 */}
+                            {data.map((item: any, index: any) => {
+                                return (
+                                    <tr className='text-center' key={index}>
+                                        <th >{item.hari_kerja}</th>
+                                        <td className=''>
+                                            {item.data ? item.data.map((item2: any, index: any) => {
+                                                return (
+                                                    <React.Fragment key={index}>
+                                                        <div className='inline-flex'>
+                                                            {`${item2.jam_mulai} - ${item2.jam_selesai}`}
+                                                        </div>
+                                                    </React.Fragment>
+                                                )
+                                            })
+                                                :
+                                                <>-</>
+                                            }
+
+                                        </td>
+                                        <td className=''>
+                                            {item.data ? item.data.map((item2: any, index: any) => {
+                                                return (
+                                                    <React.Fragment key={index}>
+                                                        <div className="inline-flex">
+                                                            {item2.dokter.nm_dokter}
+                                                        </div>
+                                                    </React.Fragment>
+                                                )
+                                            })
+                                                :
+                                                <>-</>
+                                            }
+                                        </td>
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
+                    </table>
+                </div>
+                :
+                <div className='flex items-center justify-center h-36'>
+                    <p className='font-bold uppercase '>
+                        Informasi Poli Kosong
+                    </p>
+                </div>
+            }
         </div>
     )
 }
