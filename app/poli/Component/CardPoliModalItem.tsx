@@ -24,43 +24,29 @@ const CardPoliModalItem = ({ data }: { data: any }) => {
                                     <tr className='text-center' key={index}>
                                         <th >{item.hari_kerja}</th>
                                         <td>
-                                            <div className="grid justify-center">
-                                                {item.data ? item.data.map((item2: any, index: any) => {
-                                                    return (
-                                                        <React.Fragment key={index}>
-                                                            <tr className='border-none'>
-                                                                <td>
-                                                                    <div className="lg:w-auto w-36">
-                                                                        {item2.dokter.nm_dokter}
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </React.Fragment>
-                                                    )
-                                                })
-                                                    :
+                                            <div className="grid justify-center ">
+                                                {item.data ? (
+                                                    item.data.map((item2: any, index: any) => (
+                                                        <div className="lg:w-auto w-64 h-12 flex justify-center items-center" key={index}>
+                                                            {item2.dokter.nm_dokter}
+                                                        </div>
+                                                    ))
+                                                ) : (
                                                     <>-</>
-                                                }
+                                                )}
                                             </div>
                                         </td>
                                         <td >
                                             <div className="grid justify-center">
-                                                {item.data ? item.data.map((item2: any, index: any) => {
-                                                    return (
-                                                        <React.Fragment key={index}>
-                                                            <tr className='border-none'>
-                                                                <td>
-                                                                    <div className='lg:w-auto w-36'>
-                                                                        {`${item2.jam_mulai} - ${item2.jam_selesai}`}
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </React.Fragment>
-                                                    )
-                                                })
-                                                    :
+                                                {item.data ? (
+                                                    item.data.map((item2: any, index: any) => (
+                                                        <div className="lg:w-auto w-40 h-12 flex justify-center items-center" key={index}>
+                                                            {`${item2.jam_mulai} - ${item2.jam_selesai}`}
+                                                        </div>
+                                                    ))
+                                                ) : (
                                                     <>-</>
-                                                }
+                                                )}
                                             </div>
                                         </td>
                                     </tr>

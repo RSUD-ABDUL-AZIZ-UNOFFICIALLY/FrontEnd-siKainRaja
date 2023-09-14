@@ -5,7 +5,7 @@ import Section from './Section'
 import Footer from '../Component/Footer'
 
 export const metadata = {
-    title: 'Informasi Poli',
+    title: 'Informasi Lab',
 }
 export default function page() {
     return (

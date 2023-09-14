@@ -5,8 +5,8 @@ import axios from 'axios'
 import Skeleton from './Component/Skeleton'
 
 export default function Section() {
-    const [loading, setLoading] = useState(true)
-    const [iniData, setData] = useState('')
+    const [loading, setLoading] = useState<any>(true)
+    const [iniData, setData] = useState<any>()
 
     const getData = async () => {
         try {
@@ -47,7 +47,7 @@ export default function Section() {
             <div className='section'>
                 <div className="grid gap-2 lg:grid-cols-6 grid-cols-3">
                     {loading == false ?
-                        iniData.map((item, index) => (
+                        iniData.map((item: any, index: any) => (
                             item.kd_poli != '-' ?
                                 <div key={index}>
                                     <CardPoli

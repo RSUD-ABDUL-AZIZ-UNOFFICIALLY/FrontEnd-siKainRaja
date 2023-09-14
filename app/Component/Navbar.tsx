@@ -18,9 +18,9 @@ const Navbar = ({ name }: { name: string }) => {
                             Informasi
                         </div>
                     </Link>
-                    <Link href={'/edukasi'} className={nav == 'edukasi' ? "navbar-item-active" : "navbar-item"}>
+                    <Link href={'/media'} className={nav == 'media' ? "navbar-item-active" : "navbar-item"}>
                         <div className="flex">
-                            Edukasi
+                            Media
                         </div>
                     </Link>
                     <Link href={'/poli'} className={nav == 'poli' ? "navbar-item-active" : "navbar-item"}>

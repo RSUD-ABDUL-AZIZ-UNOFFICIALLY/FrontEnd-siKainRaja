@@ -19,6 +19,10 @@ export default function Section() {
                     name='Tata Tertib Rumah Sakit'
                     api='tatip'
                 />
+                <Dropdown
+                    name='Hak dan Kewajiban'
+                    api='hakkewajiban'
+                />
             </div>
         </div >
     )

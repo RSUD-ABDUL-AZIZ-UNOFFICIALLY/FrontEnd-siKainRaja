@@ -2,17 +2,19 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import RenderDropdownItem from "./RenderDropdownItem";
-const DropdownItem = ({ name, api }) => {
-    const [dropdownName, setDropdownName] = useState(api)
-    const [loading, setLoading] = useState(null)
-    const [dropdown, setDropdown] = useState('')
-    const [iniData, setData] = useState('')
+const DropdownItem = ({ name, api }: { name: String, api: String }) => {
+    const [dropdownName, setDropdownName] = useState<any>(api)
+    const [loading, setLoading] = useState<any>(null)
+    const [dropdown, setDropdown] = useState<any>('')
+    const [iniData, setData] = useState<any>('')
 
-    const [height, setHeight] = useState(15)
+    const [height, setHeight] = useState<any>(15)
 
     const getData = async () => {
-        const hh = document.querySelector(`.${dropdownName}`)
-        setHeight(hh.offsetHeight)
+        const hh: HTMLElement | null = document.querySelector(`.${dropdownName}`)
+        if (hh && hh.offsetHeight) {
+            setHeight(hh.offsetHeight)
+        }
         if (dropdownName === dropdown) {
             setDropdown('')
         } else {
@@ -26,10 +28,8 @@ const DropdownItem = ({ name, api }) => {
                     if (!iniData) {
                         setLoading(true)
                     }
-                    setTimeout(() => {
-                        setLoading(null)
-                        setData(data.data.data)
-                    }, 2000)
+                    setData(data.data.data)
+                    setLoading(null)
                 } else {
                     setData(null)
                     setLoading(true)
@@ -61,8 +61,10 @@ const DropdownItem = ({ name, api }) => {
     }
 
     useEffect(() => {
-        const hh = document.querySelector(`.${dropdownName}`)
-        setHeight(hh.offsetHeight)
+        const hh: HTMLElement | null = document.querySelector(`.${dropdownName}`)
+        if (hh && hh.offsetHeight) {
+            setHeight(hh.offsetHeight)
+        }
     })
 
     return (
