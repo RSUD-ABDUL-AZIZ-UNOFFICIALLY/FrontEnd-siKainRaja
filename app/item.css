@@ -162,6 +162,22 @@
     transition: 0.3s;
 }
 
+.btn-back{
+    background-color: #252f48;
+    padding: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    width: min-content;
+    transition: 0.3s;
+}
+.btn-back:hover{
+    background-color: #1d2333;
+}
+.btn-back:active{
+    transform: scale(0.9);
+    transition: 0.3s;
+}
+
 .myModal {
     position: fixed;
     z-index: 10;

@@ -2,14 +2,9 @@
 import React, { useEffect, useState } from 'react'
 
 const RenderDropdownItem = ({ name, data }: { name: String, data: any }) => {
-    if (name == 'hakkewajiban') {
-        return (
-            <React.Fragment>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, dolorum maiores voluptatibus, fuga officia nulla error corrupti, excepturi deleniti praesentium architecto? Repellat saepe nobis delectus doloremque sed, veniam commodi ipsam blanditiis debitis architecto modi laboriosam qui optio? Eligendi consequuntur mollitia minus obcaecati sint doloremque molestiae quis iste eos quam. Officia distinctio magnam, cumque sint est ullam! Quas provident voluptatem ad fuga. Incidunt magnam dignissimos ipsam! A modi consequuntur, eos distinctio beatae officiis id earum laborum iste ducimus numquam velit ab ut impedit soluta vel itaque dicta laboriosam omnis quos nostrum dolorum quaerat? Sed ipsa sint eius, laboriosam voluptas animi cupiditate!
-            </React.Fragment>
-        )
-    }
-    if (name == 'hakpasien' || name == 'prokes') {
+    console.log('data', data);
+
+    if (name == 'hakpasien') {
         return (
             <React.Fragment>
                 <br />
@@ -20,7 +15,36 @@ const RenderDropdownItem = ({ name, data }: { name: String, data: any }) => {
                         <React.Fragment key={index}>
                             <div className='grid text-justify'>
                                 <div className="font-semibold text-sm">
-                                    {`${index + 1}. ${item}`}
+                                    {`${index + 1}. ${item.title}`}
+                                </div>
+                                {item.desc && item.desc.map((item2: any, index: any) => {
+                                    return ((
+                                        <React.Fragment key={index}>
+                                            <div className="grid ml-6">
+                                                {item2}
+                                            </div>
+                                        </React.Fragment>
+                                    ))
+                                })}
+                            </div >
+                        </React.Fragment>
+                    )
+                })}
+            </React.Fragment>
+        )
+    }
+    if (name == 'prokes') {
+        return (
+            <React.Fragment>
+                <br />
+                <div className='text-sm font-bold text-center'>{data.name}</div>
+                <br />
+                {data.desc && data.desc.map((item: any, index: any) => {
+                    return (
+                        <React.Fragment key={index}>
+                            <div className='grid text-justify'>
+                                <div className="font-semibold text-sm">
+                                    {`${item}`}
                                 </div>
                                 {item.desc && item.desc.map((item2: any, index: any) => {
                                     return ((

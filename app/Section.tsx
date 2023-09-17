@@ -8,7 +8,7 @@ export default function Section() {
         <div className='flex justify-center'>
             <div className='section'>
                 <Dropdown
-                    name='Hak Pasien dan Keluarga'
+                    name='Hak dan Kewajiban Pasien'
                     api='hakpasien'
                 />
                 <Dropdown
@@ -17,11 +17,8 @@ export default function Section() {
                 />
                 <Dropdown
                     name='Tata Tertib Rumah Sakit'
+                  
                     api='tatip'
-                />
-                <Dropdown
-                    name='Hak dan Kewajiban'
-                    api='hakkewajiban'
                 />
             </div>
         </div >
