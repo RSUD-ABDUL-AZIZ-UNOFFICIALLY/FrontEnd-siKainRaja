@@ -1,0 +1,29 @@
+.bottom-navigation{
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    min-height: 50px;
+    min-width: 50px;
+    max-height: 50px;
+    max-width: 50px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: max-content;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px -4px #00000091;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 10px;
+    z-index: 100;
+    transition: 0.3s;
+    color: #000000;
+  }
+  .bottom-navigation:hover{
+    background-color: #e9e6e6;
+  }
+  .bottom-navigation:active{
+    transform: scale(0.9);
+    transition: 0.3s;
+  }

@@ -1,0 +1,56 @@
+.card-foto {
+  box-shadow: 0px 0px 10px -5px #000000;
+  border-radius: 10px;
+  background-color: #ffffff;
+  /* overflow: hidden; */
+}
+
+.card-foto-head {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  transition: 0.3s;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.card-foto-head img {
+  height: 100%;
+  transition: ease-in-out 0.2s;
+}
+
+.card-foto-head img:hover {
+  height: 100%;
+  transform: scale(1.2);
+  transition: ease-in-out 0.2s;
+}
+
+.card-foto-head-item {
+  /* min-height: 300px;
+  max-height: 500px; */
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  transition: ease-in-out 0.3s;
+  overflow: hidden;
+}
+
+.card-foto-head-item:hover {
+  transform: scale(1.05);
+  transition: ease-in-out 0.3s;
+}
+
+.card-foto-item {
+  display: block;
+  padding: 10px;
+}
+.card-foto-item h1 {
+  font-weight: bold;
+}
+.card-foto-item p {
+  text-align: justify;
+  font-size: 13px;
+}
+
+/*# sourceMappingURL=cardFoto.css.map */

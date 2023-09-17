@@ -1,0 +1,49 @@
+.card-video {
+  box-shadow: 0px 0px 10px -5px #000000;
+  border-radius: 10px;
+  background-color: #ffffff;
+  /* overflow: hidden; */
+}
+
+.card-video-head {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  transition: 0.3s;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.card-video-head video {
+  height: 100%;
+}
+
+.card-video-head-item {
+  /* min-height: 300px;
+  max-height: 500px; */
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  transition: ease-in-out 0.3s;
+  overflow: hidden;
+}
+
+.card-video-head-item:hover {
+  transform: scale(1.05);
+  transition: ease-in-out 0.3s;
+}
+
+.card-video-item {
+  display: block;
+  padding: 10px;
+}
+.card-video-item h1 {
+  font-weight: bold;
+}
+.card-video-item p {
+  text-align: justify;
+  font-size: 13px;
+}
+
+/*# sourceMappingURL=cardVideo.css.map */

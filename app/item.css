@@ -153,10 +153,11 @@
 }
 
 .btn-card:hover{
-    background-color: #c0bebe;
+    background-color: #d6d6d6;
+    box-shadow: 0px 0px 10px -5px #000000;
 }
 .btn-card:active{
-    background-color: #c0bebe;
+    background-color: #d6d6d6;
     transform: scale(0.98);
     transition: 0.3s;
 }

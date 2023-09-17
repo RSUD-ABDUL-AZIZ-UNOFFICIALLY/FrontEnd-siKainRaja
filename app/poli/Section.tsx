@@ -45,7 +45,7 @@ export default function Section() {
     return (
         <div className='flex justify-center '>
             <div className='section'>
-                <div className="grid gap-2 lg:grid-cols-6 grid-cols-3">
+                <div className="grid gap-2 lg:grid-cols-4 grid-cols-3">
                     {loading == false ?
                         iniData.map((item: any, index: any) => (
                             item.kd_poli != '-' ?

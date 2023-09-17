@@ -12,7 +12,7 @@ export default function page() {
     return (
         <main>
             <Header />
-            <Navbar name={'poli'} />
+            <Navbar name={'radiologi'} />
             <Section />
             <BottomNavigation />
         </main>

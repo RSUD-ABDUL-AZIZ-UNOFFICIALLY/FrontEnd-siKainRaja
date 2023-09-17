@@ -2,8 +2,6 @@
 import React from 'react'
 
 const CardPoliModalItem = ({ data }: { data: any }) => {
-    console.log('data', data);
-
     return (
         <div className='myModal-item-section'>
             {data != '' ?

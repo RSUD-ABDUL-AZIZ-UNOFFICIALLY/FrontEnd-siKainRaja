@@ -16,7 +16,6 @@ const CardPoli = ({ id, name }: { id: String, name: String }) => {
             });
 
             if (data.data.data.length > 0) {
-                console.log('ss', data.data.data);
                 setData(data.data.data)
                 setModal(true)
                 setLoadingModal(false)

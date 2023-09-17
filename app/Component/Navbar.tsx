@@ -33,6 +33,11 @@ const Navbar = ({ name }: { name: string }) => {
                             Lab
                         </div>
                     </Link>
+                    <Link href={'/radiologi'} className={nav == 'radiologi' ? "navbar-item-active" : "navbar-item"}>
+                        <div className="flex">
+                            Radiologi
+                        </div>
+                    </Link>
                     <Link href={'/map'} className={nav == 'map' ? "navbar-item-active" : "navbar-item"}>
                         <div className="flex">
                             Map
