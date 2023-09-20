@@ -2,8 +2,6 @@
 import React, { useEffect, useState } from 'react'
 
 const RenderDropdownItem = ({ name, data }: { name: String, data: any }) => {
-    console.log('data', data);
-
     if (name == 'hakpasien') {
         return (
             <React.Fragment>

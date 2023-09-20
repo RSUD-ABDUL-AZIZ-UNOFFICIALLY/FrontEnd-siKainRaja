@@ -9,7 +9,7 @@ const CardLab = ({ kelas, name, id }: { kelas: string, name: string, id: string 
                 <div className="col-span-1 card-lab-left">
                     <p>{kelas}</p>
                 </div>
-                <div className="col-span-5 card-lab-item">
+                <div className="col-span-5 card-lab-item text-center">
                     {name}
                 </div>
             </div>
