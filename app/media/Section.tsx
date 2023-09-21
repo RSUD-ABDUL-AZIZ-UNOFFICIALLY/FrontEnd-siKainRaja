@@ -15,8 +15,9 @@ const Section = () => {
                 method: 'get',
                 url: 'http://103.150.116.254:3000/skr/media/edukasi',
             });
-            console.log(data.data.data.data);
-            setDataMedia(data.data.data.data)
+            if (data.data.data.data) {
+                setDataMedia(data.data.data.data)
+            }
         } catch (error) {
 
         }
@@ -24,11 +25,7 @@ const Section = () => {
     useEffect(() => {
         getData()
     }, [])
-    const carouselItems = [
-        'https://www.paho.org/sites/default/files/untitled_1500_540_px_1_0.jpg',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRixi40GxzXnxZfl9o4rjJmYGkBAdhApGt5Bn_Df4dUODACRD8T2IT-y1ThiTq4R3XqZM&usqp=CAU',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWwYEp3El1QunpTaYGjmLsb5HTv6lxvaCnxqDWaqNtpjpS5cletJKIPlLCbW-2PjJr6dI&usqp=CAU',
-    ];
+
     return (
         <div className='flex justify-center'>
             <div className="section">
@@ -54,14 +51,14 @@ const Section = () => {
                             </React.Fragment>
                         )
                     }) :
-                    <React.Fragment>
-                        <SkeletonCard />
-                        <SkeletonCard />
-                        <SkeletonCard />
-                        <SkeletonCard />
-                        <SkeletonCard />
-                        <SkeletonCard />
-                    </React.Fragment>
+                        <React.Fragment>
+                            <SkeletonCard />
+                            <SkeletonCard />
+                            <SkeletonCard />
+                            <SkeletonCard />
+                            <SkeletonCard />
+                            <SkeletonCard />
+                        </React.Fragment>
                     }
                 </div>
             </div>

@@ -1,5 +1,4 @@
 'use client'
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Dropdown from "./Component/DropdownItem"
 export default function Section() {
@@ -17,7 +16,7 @@ export default function Section() {
                 />
                 <Dropdown
                     name='Tata Tertib Rumah Sakit'
-                  
+
                     api='tatip'
                 />
             </div>

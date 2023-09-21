@@ -1,3 +1,4 @@
+'use client'
 import Header from './Component/Header'
 import Navbar from './Component/Navbar'
 import Section from './Section'

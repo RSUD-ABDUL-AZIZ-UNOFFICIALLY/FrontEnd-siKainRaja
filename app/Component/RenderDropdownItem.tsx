@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 const RenderDropdownItem = ({ name, data }: { name: String, data: any }) => {
     if (name == 'hakpasien') {

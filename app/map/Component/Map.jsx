@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react'
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
-import { Icon } from 'leaflet';
+// import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
+// import { Icon } from 'leaflet';
 
 import 'leaflet/dist/leaflet.css';
 

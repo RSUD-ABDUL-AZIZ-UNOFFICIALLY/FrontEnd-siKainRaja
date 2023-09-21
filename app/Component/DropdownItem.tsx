@@ -2,6 +2,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import RenderDropdownItem from "./RenderDropdownItem";
+import 'dotenv/config'
 const DropdownItem = ({ name, api }: { name: String, api: String }) => {
     const [dropdownName, setDropdownName] = useState<any>(api)
     const [loading, setLoading] = useState<any>(null)

@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import './cardFoto.css'
+
 const CardFoto = ({ title, link, desc }: { title: string, link: string, desc: string }) => {
     return (
         <div className='card-foto'>
