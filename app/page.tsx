@@ -12,7 +12,7 @@ export default function Home() {
     <main className='main'>
       <Header />
       <Navbar name={'umum'} />
-      <Section />
+      <Section  />
       <BottomNavigation />
     </main>
   )

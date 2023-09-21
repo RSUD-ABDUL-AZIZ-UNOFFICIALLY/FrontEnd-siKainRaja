@@ -1,0 +1,27 @@
+.card-radiologi {
+  background-color: #f6f2f2;
+  width: 100%;
+  min-height: 130px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cr-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  text-align: center;
+  padding: 10px;
+}
+
+.cr-price {
+  background-color: #ffe400;
+  width: 100%;
+  padding: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=radiologi.css.map */
