@@ -2,13 +2,13 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import RenderDropdownItem from "./RenderDropdownItem";
-import 'dotenv/config'
+
 const DropdownItem = ({ name, api }: { name: String, api: String }) => {
+    const base_url = process.env.base_url;
     const [dropdownName, setDropdownName] = useState<any>(api)
     const [loading, setLoading] = useState<any>(null)
     const [dropdown, setDropdown] = useState<any>('')
     const [iniData, setData] = useState<any>('')
-
     const [height, setHeight] = useState<any>(15)
 
     const getData = async () => {
@@ -23,7 +23,7 @@ const DropdownItem = ({ name, api }: { name: String, api: String }) => {
             try {
                 const data = await axios({
                     method: 'get',
-                    url: 'http://103.150.116.254:3000/skr/umum/' + dropdownName,
+                    url: `${base_url}/umum/${dropdownName}`,
                 });
                 if (data.data.data) {
                     if (!iniData) {

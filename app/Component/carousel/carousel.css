@@ -28,7 +28,7 @@
 }
 .carousel-img .slide.active img:hover {
   transition: ease-in-out 0.3s;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 .carousel-img .slide.non-active img {
   display: none;
@@ -52,7 +52,7 @@
   min-width: 100vw;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.6078431373);
+  background-color: rgba(0, 0, 0, 0.2196078431);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,6 +62,7 @@
 .modal-carousel-item {
   background-color: rgba(0, 0, 0, 0.3607843137);
   box-shadow: 0px 0px 10px -5px #000000;
+  backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 10px;
   display: block;

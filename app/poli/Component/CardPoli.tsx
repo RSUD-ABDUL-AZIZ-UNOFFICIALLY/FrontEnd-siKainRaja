@@ -4,6 +4,7 @@ import CardPoliModalItem from "./CardPoliModalItem";
 import axios from 'axios';
 
 const CardPoli = ({ id, name }: { id: String, name: String }) => {
+    const base_url = process.env.base_url;
     const [modal, setModal] = useState<boolean>(false)
     const [loadingModal, setLoadingModal] = useState<boolean>(false)
     const modalRef = useRef<any>(null);
@@ -12,7 +13,7 @@ const CardPoli = ({ id, name }: { id: String, name: String }) => {
         try {
             const data = await axios({
                 method: 'get',
-                url: 'http://103.150.116.254:3000/skr/poli/jadwal?kd_poli=' + id,
+                url: `${base_url}/poli/jadwal?kd_poli=${id}`,
             });
 
             if (data.data.data.length > 0) {

@@ -5,6 +5,7 @@ import axios from 'axios'
 import Skeleton from './Component/Skeleton'
 
 export default function Section() {
+    const base_url = process.env.base_url;
     const [loading, setLoading] = useState<any>(true)
     const [iniData, setData] = useState<any>()
 
@@ -12,7 +13,7 @@ export default function Section() {
         try {
             const data = await axios({
                 method: 'get',
-                url: 'http://103.150.116.254:3000/skr/poli/all',
+                url: `${base_url}/poli/all`,
             });
 
             if (data.data.data) {

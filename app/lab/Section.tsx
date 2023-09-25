@@ -5,6 +5,7 @@ import CardLab from "./component/CardLab";
 import Skeleton from '../poli/Component/Skeleton';
 
 export default function Section() {
+    const base_url = process.env.base_url;
     const [iniData, setData] = useState<any>()
     const [loading, setLoading] = useState<boolean>(true)
     const [keyword, setKeyword] = useState<string>('')
@@ -12,7 +13,7 @@ export default function Section() {
         try {
             const data = await axios({
                 method: 'get',
-                url: 'http://103.150.116.254:3000/skr/penunjang/jnslab',
+                url: `${base_url}/penunjang/jnslab`,
             });
             if (data.data.data) {
                 setData(data.data.data)
@@ -29,7 +30,7 @@ export default function Section() {
         try {
             const data = await axios({
                 method: 'get',
-                url: 'http://103.150.116.254:3000/skr/penunjang/jnslab?search=' + keyword,
+                url: `${base_url}/penunjang/jnslab?search=${keyword}`,
             });
             if (data.data.data) {
                 setData(data.data.data)

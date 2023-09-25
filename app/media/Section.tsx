@@ -8,12 +8,13 @@ import axios from 'axios';
 import SkeletonCard from '../Component/skeleton-card/SkeletonCard';
 
 const Section = () => {
+    const base_url = process.env.base_url;
     const [dataMedia, setDataMedia] = useState<any>()
     const getData = async () => {
         try {
             const data = await axios({
                 method: 'get',
-                url: 'http://103.150.116.254:3000/skr/media/edukasi',
+                url: `${base_url}/media/edukasi`,
             });
             if (data.data.data.data) {
                 setDataMedia(data.data.data.data)
