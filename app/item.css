@@ -92,27 +92,29 @@
 .dropdown-item{
     padding: 7px;
     border-width: 1px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border-top: none;
     border-color: #000000;
-    transition: ease-in-out 0.5s;
+    transition: ease 0.7s;
+    background-color: #feffd5;
     z-index: 1;
 }
 .dropdown-item-off{
     padding: 7px;
     border-width: 1px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border-top: none;
     border-color: #000000;
-    transition: ease-in-out 0.5s;
+    transition: ease 0.7s;
     z-index: 1;
     top: -15px;
+    background-color: #feffd5;
 }
 
 .icon-spin{
@@ -262,6 +264,7 @@
     z-index: 1000;  
   }
 
+
 @media screen and (max-width: 767px) {
     .btn-card-head{
         font-size: 10px;
@@ -269,5 +272,9 @@
     .myModal-item{
         min-width: 95vw;
         max-width: 95vw;
+    }
+    .text-dropdown{
+        font-size: 10px;
+        color: #000000;
     }
 }

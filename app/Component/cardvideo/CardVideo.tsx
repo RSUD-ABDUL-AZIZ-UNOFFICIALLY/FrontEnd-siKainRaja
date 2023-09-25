@@ -5,7 +5,7 @@ const CardVideo = ({ title, link, desc }: { title: string, link: string, desc: s
     return (
         <div className='card-video'>
             <div className='card-video-head'>
-                <video src={link}></video>
+                <video src={link} controls loop={true}></video>
             </div>
             <div className="card-video-item">
                 <h1>{title}</h1>
