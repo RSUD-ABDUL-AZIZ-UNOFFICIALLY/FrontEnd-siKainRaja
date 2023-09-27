@@ -75,6 +75,9 @@ const CardPoli = ({ id, name }: { id: String, name: String }) => {
             {renderModal()}
             <button onClick={() => handleModal()} className="btn-card">
                 <div className="btn-card-head">{name}</div>
+                <div className="btn-card-body">
+                    <div className="nm-dr">Dokter :</div>
+                </div>
             </button>
         </div>
     )

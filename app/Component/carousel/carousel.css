@@ -134,6 +134,17 @@
   .button-modal-carousel svg {
     height: 40px;
   }
+  .mc-img {
+    aspect-ratio: auto;
+  }
+  .mc-img .slide {
+    position: relative;
+  }
+  .mc-img .slide.active img {
+    height: auto;
+    width: 100%;
+    transition: ease-in-out 0.3s;
+  }
 }
 
 /*# sourceMappingURL=carousel.css.map */

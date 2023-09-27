@@ -1,13 +1,16 @@
 /** @type {import('next').NextConfig} */
 require('dotenv').config();
-const nextConfig = {
+// const nextConfig = {
+//     eslint: {
+//         ignoreDuringBuilds: true,
+//     },
+// }
+
+module.exports = {
     eslint: {
         ignoreDuringBuilds: true,
     },
-}
-
-module.exports = {
-    nextConfig, env: {
+    env: {
         base_url: process.env.base_url,
     },
 }

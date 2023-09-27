@@ -5,23 +5,23 @@ const CardPoliModalItem = ({ data }: { data: any }) => {
     return (
         <div className='myModal-item-section'>
             {data != '' ?
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto p-2">
                     <table className="table">
                         {/* head */}
                         <thead>
-                            <tr className='text-center'>
-                                <th className=''>Hari</th>
-                                <th className=''>Dokter</th>
-                                <th className=''>Waktu</th>
+                            <tr className='text-center text-lg text-slate-100 border border-gray-300'>
+                                <th className='border border-gray-300'>Hari</th>
+                                <th className='border border-gray-300'>Dokter</th>
+                                <th className='border border-gray-300'>Waktu</th>
                             </tr>
                         </thead>
                         <tbody>
                             {/* row 1 */}
                             {data.map((item: any, index: any) => {
                                 return (
-                                    <tr className='text-center' key={index}>
-                                        <th >{item.hari_kerja}</th>
-                                        <td>
+                                    <tr className='text-center border border-gray-300' key={index}>
+                                        <td className='border border-gray-300' >{item.hari_kerja}</td>
+                                        <td className='border border-gray-300'>
                                             <div className="grid justify-center ">
                                                 {item.data ? (
                                                     item.data.map((item2: any, index: any) => (
@@ -34,7 +34,7 @@ const CardPoliModalItem = ({ data }: { data: any }) => {
                                                 )}
                                             </div>
                                         </td>
-                                        <td >
+                                        <td className='border border-gray-300'>
                                             <div className="grid justify-center">
                                                 {item.data ? (
                                                     item.data.map((item2: any, index: any) => (

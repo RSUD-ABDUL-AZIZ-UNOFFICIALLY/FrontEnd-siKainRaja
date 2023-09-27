@@ -16,6 +16,10 @@
   }
 }
 
+::-webkit-scrollbar {
+  width: 0px; /* Lebar scrollbar */
+}
+
 body {
  /* background: url('../public/img/bgs.avif'); */
  background: url('../public/img/gg.jpg');
@@ -32,6 +36,7 @@ body {
   width: fit-content;
   max-width: 90vw;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   box-shadow: 0px 0px 10px -4px #00000069;
   border-radius: 10px;
