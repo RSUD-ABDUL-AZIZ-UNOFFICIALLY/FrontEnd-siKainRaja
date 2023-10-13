@@ -100,6 +100,7 @@
     border-color: #000000;
     transition: ease 0.7s;
     background-color: #feffd5;
+    background-color: #ffffff;
     z-index: 1;
 }
 .dropdown-item-off{
@@ -115,6 +116,7 @@
     z-index: 1;
     top: -15px;
     background-color: #feffd5;
+    background-color: #ffffff;
 }
 
 .icon-spin{
@@ -127,7 +129,7 @@
 }
 
 .btn-card{
-    border-radius: 5px;
+    border-radius: 20px;
     /* border-width: 1px;  */
     box-shadow: 0px 0px 7px -2px #00000088;
     background-color: #ffffff;
@@ -145,8 +147,6 @@
     font-weight: bold;
     font-size: 15px;
     text-transform: uppercase;
-    background-color: #ffe400;
-    border-bottom-right-radius: 40px;
     color: #000000;
     display: flex;
     justify-content: center;
@@ -206,6 +206,7 @@
 .myModal-item{
     backdrop-filter: blur(10px);
     background-color: #00000082;
+    background-color: #ffffff;
     /* padding: 15px; */
     min-width: 80vw;
     max-width: 80vw;
@@ -215,23 +216,25 @@
     box-shadow: 5px 5px 10px -5px #0000006b;
 }
 
-  
+
 .myModal-item-head{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #17161671;
+    /* background-color: #17161671;     */
     padding: 5px 10px 5px 20px;;
-    color: #FFFFFF;
+    color: #000000;
+    font-weight: bold;
+    border-bottom-width: 2px;
 }
 .myModal-item-section{
     /* overflow-x: scroll; */
-    max-height: 60vh;
+    height: 80vh;
     overflow-y: scroll;
     scroll-padding: 20px;
     max-width: calc(100%);
-    padding: 10px;
-    color: #f2eaea;
+    padding: 20px;
+    color: #000000;
 }
 .head-itemDropdown{
     font-size: 11px;

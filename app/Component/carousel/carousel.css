@@ -1,5 +1,4 @@
 .carousel {
-  background-color: #FFFFFF;
   box-shadow: 0px 0px 10px -5px #000000;
   border-radius: 10px;
   display: block;
@@ -28,7 +27,7 @@
 }
 .carousel-img .slide.active img:hover {
   transition: ease-in-out 0.3s;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .carousel-img .slide.non-active img {
   display: none;
@@ -48,8 +47,8 @@
 
 .modal-carousel {
   position: fixed;
-  min-height: 100vh;
-  min-width: 100vw;
+  height: 100vh;
+  width: 100vw;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.2196078431);
@@ -60,6 +59,7 @@
 }
 
 .modal-carousel-item {
+  background-color: #e6e6e6;
   background-color: rgba(0, 0, 0, 0.3607843137);
   box-shadow: 0px 0px 10px -5px #000000;
   backdrop-filter: blur(10px);
@@ -68,6 +68,7 @@
   display: block;
   position: fixed;
   width: 70vw;
+  aspect-ratio: 16/9;
 }
 
 .mc-img {
@@ -84,10 +85,7 @@
 .mc-img .slide.active img {
   height: 100%;
   transition: ease-in-out 0.3s;
-}
-.mc-img .slide.active img:hover {
-  transition: ease-in-out 0.3s;
-  transform: scale(1.2);
+  border-radius: 10px;
 }
 .mc-img .slide.non-active img {
   display: none;

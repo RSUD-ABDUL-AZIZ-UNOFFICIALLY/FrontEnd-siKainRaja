@@ -1,5 +1,4 @@
 .card-radiologi {
-  background-color: #f6f2f2;
   width: 100%;
   min-height: 130px;
   border-radius: 10px;
@@ -16,7 +15,6 @@
 }
 
 .cr-price {
-  background-color: #ffe400;
   width: 100%;
   padding: 7px;
   display: flex;

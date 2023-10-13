@@ -43,7 +43,7 @@ const CardPoli = ({ id, name }: { id: String, name: String }) => {
                 <>
                     <div className="myModal">
                         <div ref={modalRef} className="myModal-item">
-                            <div className="myModal-item-head">
+                            <div className="myModal-item-head shadow-xl">
                                 <h1 className='uppercase'>{name}</h1>
                                 <button onClick={() => setModal(false)} className='btn-transparent'>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-x" viewBox="0 0 16 16">
@@ -73,12 +73,30 @@ const CardPoli = ({ id, name }: { id: String, name: String }) => {
     return (
         <div>
             {renderModal()}
-            <button onClick={() => handleModal()} className="btn-card">
-                <div className="btn-card-head">{name}</div>
+            {/* <div className="btn-card-head">{name}</div>
                 <div className="btn-card-body">
                     <div className="nm-dr">Dokter :</div>
+                </div> */}
+            <div className="card w-full bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <div className="flex justify-center items-center">
+                        <h2 className="font-bold text-center uppercase">{name}</h2>
+                    </div>
+                    <div className='p-2'>
+                        <h3>Dokter : </h3>
+                        <ul className='pl-4'>
+                            <li>asdas</li>
+                            <li>asdas</li>
+                            <li>asdas   </li>
+                        </ul>
+                    </div>
+                    <div className="flex mt-4">
+                        <button onClick={() => handleModal()} className='btn btn-accent w-full'>
+                            Cek Jadwal
+                        </button>
+                    </div>
                 </div>
-            </button>
+            </div>
         </div>
     )
 }

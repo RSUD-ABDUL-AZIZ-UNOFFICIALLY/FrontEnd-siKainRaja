@@ -9,6 +9,8 @@ import SkeletonCard from '../Component/skeleton-card/SkeletonCard';
 
 const Section = () => {
     const base_url = process.env.base_url;
+    console.log(base_url);
+    
     const [dataMedia, setDataMedia] = useState<any>()
     const getData = async () => {
         try {
@@ -16,6 +18,7 @@ const Section = () => {
                 method: 'get',
                 url: `${base_url}/media/edukasi`,
             });
+            
             if (data.data.data.data) {
                 setDataMedia(data.data.data.data)
             }

@@ -52,7 +52,7 @@ const Carousel = ({ items, title, desc, thumbnail }: { items: any, title: string
     return (
         <React.Fragment>
             {modal == true && items.length > 0 && renderModal()}
-            <div className="carousel">
+            <div className="card bg-base-100 shadow-xl bg-">
                 <div className="carousel-img">
                     <button onClick={() => setModal(true)} className={'slide active'} >
                         <img src={thumbnail} alt="" />
