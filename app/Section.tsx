@@ -89,7 +89,7 @@ export default function Section() {
                     <div className="card-body p-0 overflow-hidden">
                         {dataHakPasien ?
                             <React.Fragment>
-                                <h2 className="text-center font-bold shadow-md p-3">{dataHakPasien.name}</h2>
+                                <h2 className="text-center font-bold shadow-md p-3 uppercase">{dataHakPasien.name}</h2>
                                 <div className={`overflow-y-scroll transition-shadow p-3 ${readHakPasien == false ? 'h-40' : 'h-auto'}`}>
                                     {dataHakPasien.desc.map((item: any, index: any) => {
                                         return (
@@ -143,7 +143,7 @@ export default function Section() {
                     <div className="card-body p-0 overflow-hidden">
                         {dataProkes ?
                             <React.Fragment>
-                                <h2 className="text-center font-bold shadow-md p-3">{dataProkes.name}</h2>
+                                <h2 className="text-center font-bold shadow-md p-3 uppercase">{dataProkes.name}</h2>
                                 <div className={`overflow-y-scroll transition-shadow p-3 ${readProkes == false ? 'h-40' : 'h-auto'}`}>
                                     {dataProkes.desc.map((item: any, index: any) => {
                                         return (
@@ -187,7 +187,7 @@ export default function Section() {
                     <div className="card-body p-0 overflow-hidden">
                         {dataTatib ?
                             <React.Fragment>
-                                <h2 className="text-center font-bold shadow-md p-3">{dataTatib.name}</h2>
+                                <h2 className="text-center font-bold shadow-md p-3 uppercase">{dataTatib.name}</h2>
                                 <div className={`overflow-y-scroll transition-shadow p-3 ${readTatib == false ? 'h-40' : 'h-auto'}`}>
                                     {dataTatib.desc.map((item: any, index: any) => {
                                         return (
