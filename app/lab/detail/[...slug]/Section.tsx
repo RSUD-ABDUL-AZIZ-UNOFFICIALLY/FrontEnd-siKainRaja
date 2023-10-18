@@ -4,12 +4,13 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
 const Section = ({ id, name }: { id: any, name: any }) => {
+    const base_url = process.env.base_url;
     const [iniData, setData] = useState<any>()
     const getData = async () => {
         try {
             const data = await axios({
                 method: 'get',
-                url: 'http://103.150.116.254:3000/skr/penunjang/jnslab/' + id,
+                url: `${base_url}/penunjang/jnslab/` + id,
             });
             if (data.data.data) {
                 setData(data.data.data)

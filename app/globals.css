@@ -190,6 +190,16 @@ body {
   display: grid;
   position: relative;
 }
+@media (max-width: 1230px) {
+  .navbar{
+    min-width: 90vw;
+    max-width: 90vw;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    transition: 0.2s;
+    scrollbar-width: 0px;
+  }
+}
 @media (max-width: 767px) {
   .header-item{
     justify-content: flex-start;
