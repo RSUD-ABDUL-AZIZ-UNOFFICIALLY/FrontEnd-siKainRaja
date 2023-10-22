@@ -41,7 +41,7 @@ const Section = ({ id, name }: { id: any, name: any }) => {
                             </div> */}
                             <div className="card w-full bg-base-100 shadow-xl">
                                 <div className="card-body">
-                                    <h2 className="w-full text-center font-bold">{item.Pemeriksaan}</h2>
+                                    <h2 className="w-full text-center">{item.Pemeriksaan}</h2>
                                     <div className="flex mt-4">
                                         <div className='bg-secondary p-3 w-full rounded-md text-white text-center'>
                                             {`Rp. ${item.biaya_item}`}

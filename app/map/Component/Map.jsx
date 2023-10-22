@@ -21,63 +21,19 @@ const Map = () => {
                 method: 'get',
                 url: `${base_url}/maps`,
             });
-
             if (data.data.data) {
-                setGeojson(data.data.data.features)
-                console.log(data.data.data.features);
+                const dataGeojson = data.data.data.features
+                setGeojson(dataGeojson)
+                console.log(dataGeojson);
+                renderMap(dataGeojson)
             }
         } catch (error) {
 
         }
     }
 
-    const polylineCoordinates = [
-        [
-            108.97262961808502,
-            0.8954610105647873
-        ],
-        [
-            108.9726708258255,
-            0.8955009052486673
-        ],
-        [
-            108.97260083807652,
-            0.8955728464828638
-        ],
-        [
-            108.97256224670167,
-            0.8955355678441919
-        ],
-        [
-            108.97262961808502,
-            0.8954610105647873
-        ]
-    ];
-
-    const polylineCoordinates2 = [
-        [
-            108.9727128382267,
-            0.8956992229814915
-        ],
-        [
-            108.97266417807111,
-            0.8956477067596325
-        ],
-        [
-            108.97273859948518,
-            0.8955723404334179
-        ],
-        [
-            108.9726708258255,
-            0.8955009052486673
-        ],
-        [
-            108.97260083807652,
-            0.8955728464828638
-        ],
-    ];
-
-    const renderMap = () => {
+    const renderMap = (e) => {
+        console.log('e', e);
         if (map.current) return; // stops map from intializing more than once
 
         map.current = new maptilersdk.Map({
@@ -87,42 +43,54 @@ const Map = () => {
             zoom: zoom
         });
 
-        new maptilersdk.Marker({ color: "#000000" })
+        var popup = new maptilersdk.Popup({ offset: 25 }).setText(
+            'Ini Anda'
+        );
+
+        new maptilersdk.Marker({ color: "#3b82f6" })
             .setLngLat(iniPosition)
+            .setPopup(popup)
             .addTo(map.current);
 
 
         map.current.on("load", () => {
-            if (iniGeojson) {
-                map.current.addLayer({
-                    id: "polyline",
-                    type: "line",
-                    source: {
-                        type: "geojson",
-                        data: {
-                            type: "Feature",
-                            properties: {},
-                            geometry: {
-                                type: "LineString",
-                                coordinates: polylineCoordinates,
+            if (e !== null) {
+                for (let i = 0; i < e.length; i++) {
+                    console.log('wes', e[i].properties.name);
+                    console.log('coor', e[i].geometry.coordinates[0]);
+                    map.current.addLayer({
+                        id: e[i].properties.name, // Id lapisan polygon pertama
+                        type: "fill",
+                        source: {
+                            type: "geojson",
+                            data: {
+                                type: "Feature",
+                                properties: {},
+                                geometry: {
+                                    type: "Polygon",
+                                    coordinates: [e[i].geometry.coordinates[0]],
+                                },
                             },
                         },
-                    },
-                    layout: {
-                        "line-join": "round",
-                        "line-cap": "round",
-                    },
-                    paint: {
-                        "line-color": "#FF0000", // Warna polyline (misalnya merah)
-                        "line-width": 4, // Lebar polyline
-                    },
-                });
+                        layout: {},
+                        paint: {
+                            "fill-color": "#10b981",
+                            "fill-opacity": 0.5,
+                        },
+                    });
+                    map.current.on('click', `${e[i].properties.name}`, (z) => {
+                        const feature = z.features[0];
+                        popup.setHTML(`<h3>${e[i].properties.name}</h3>`);
+                        popup.setLngLat(feature.geometry.coordinates[0][0]).addTo(map.current)
+                        // console.log('Layer clicked:', e.features[0]);
+                    });
+                }
             }
         });
     }
     useEffect(() => {
         getGeoJson()
-        renderMap()
+        // renderMap()
     }, []);
 
     return (

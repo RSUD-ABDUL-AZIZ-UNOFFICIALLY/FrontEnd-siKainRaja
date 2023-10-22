@@ -18,7 +18,7 @@ const Section = () => {
                 method: 'get',
                 url: `${base_url}/media/edukasi`,
             });
-
+            
             if (data.data.data.data) {
                 setDataMedia(data.data.data.data)
             }
