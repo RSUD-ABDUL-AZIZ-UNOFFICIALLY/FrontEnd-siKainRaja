@@ -7,6 +7,36 @@ const Section = () => {
     const base_url = process.env.base_url;
     const [dataRadiologi, setDataRadilogi] = useState<any>()
     const [keyword, setKeyword] = useState<string>('')
+
+    const page = 12
+    const [numberPage, setNumberPage] = useState<number>(1)
+    const [leftPagination, setLeftPagination] = useState<number>(0)
+    const [rightPagination, setRightPagination] = useState<number>(page)
+
+    const handleLeftPagination = () => {
+        if (leftPagination != 0 && rightPagination != page) {
+            setLeftPagination(leftPagination - page)
+            setRightPagination(rightPagination - page)
+            setNumberPage(numberPage - 1)
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+        }
+    }
+
+    const handleRightPagination = () => {
+        const lg = dataRadiologi.length
+        if (rightPagination < lg) {
+            setLeftPagination(leftPagination + page)
+            setRightPagination(rightPagination + page)
+            setNumberPage(numberPage + 1)
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+        }
+    }
     const getData = async () => {
         try {
             const data = await axios({
@@ -23,6 +53,9 @@ const Section = () => {
     }
 
     const getKeyword = () => {
+        setLeftPagination(0)
+        setRightPagination(page)
+        setNumberPage(1)
         getData()
     }
     useEffect(() => {
@@ -42,11 +75,16 @@ const Section = () => {
                             </div>
                         </div>
                     </div>
-                    {dataRadiologi ? dataRadiologi.map((item: any, index: number) => (
-                        <React.Fragment key={index}>
-                            <CardRadiologi title={item.nm_perawatan} price={item.total_byr} />
-                        </React.Fragment>
-                    ))
+                    {dataRadiologi ? dataRadiologi.map((item: any, index: number) => {
+                        if (leftPagination <= index && rightPagination > index) {
+                            return (
+                                <React.Fragment key={index}>
+                                    <CardRadiologi title={item.nm_perawatan} price={item.total_byr} />
+                                </React.Fragment>
+                            )
+                        }
+                    }
+                    )
                         :
                         <React.Fragment>
                             <Skeleton />
@@ -63,6 +101,19 @@ const Section = () => {
                             <Skeleton />
                         </React.Fragment>
                     }
+                </div>
+                <div className="join w-full justify-center mt-6 mb-3">
+                    <button className="join-item btn" onClick={() => handleLeftPagination()} >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+                    <button className="join-item btn">{numberPage}</button>
+                    <button className="join-item btn" onClick={() => handleRightPagination()}>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>

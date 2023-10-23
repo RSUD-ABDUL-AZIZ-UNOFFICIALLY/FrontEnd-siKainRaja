@@ -28,11 +28,12 @@ const Carousel = ({ items, title, desc, thumbnail }: { items: any, title: string
                         <div className="mc-img">
                             <div className="carousel w-full">
                                 {items.map((item: any, index: number) => (
-                                    <div id={`slide${index}`} className="carousel-item relative w-full flex justify-center">
-                                        <div className="block lg:p-0 pt-14">
-                                            <img src={item} className="h-full" />
-                                        </div>
-                                        <div className={`absolute w-full justify-between flex items-center transform`}>
+                                    <React.Fragment key={index}>
+                                        <div id={`slide${index}`} className="carousel-item relative w-full flex justify-center">
+                                            <div className="block gap-2">
+                                                <img src={item} className="h-full rounded-lg" />
+                                            </div>
+                                            {/* <div className={`absolute w-full justify-between flex items-center transform`}>
                                             <a href={`#slide${index - 1}`} className="btn btn-ghost text-white">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
                                                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -44,28 +45,21 @@ const Carousel = ({ items, title, desc, thumbnail }: { items: any, title: string
                                                 </svg>
 
                                             </a>
+                                        </div> */}
                                         </div>
-                                    </div>
+                                    </React.Fragment>
                                 ))}
                             </div>
                         </div>
-                        {/* <div className="mc-img">
-                            {items.map((item: any, index: any) => (
-                                <div onClick={() => setModal(true)} key={index} className={index == currentIndex ? 'slide active' : 'slide non-active '} >
-                                    <img src={item} alt="" />
-                                </div>
+                        <div className="flex justify-center w-full py-2 gap-2">
+                            {items.map((item: any, index: number) => (
+                                <React.Fragment key={index}>
+                                    <a href={`#slide${index}`} className="btn btn-xs">
+                                        {`${index + 1}`}
+                                    </a>
+                                </React.Fragment>
                             ))}
                         </div>
-                        <button onClick={prevSlide} className="button-modal-cc left-modal">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" className="bi bi-chevron-compact-left" viewBox="0 0 16 16">
-                                <path fillRule="evenodd" d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223z" />
-                            </svg>
-                        </button>
-                        <button onClick={nextSlide} className="button-modal-cc right-modal">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" className="bi bi-chevron-compact-right" viewBox="0 0 16 16">
-                                <path fillRule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z" />
-                            </svg>
-                        </button> */}
                     </div>
                 </div>
                 {/* </div > */}
@@ -76,16 +70,18 @@ const Carousel = ({ items, title, desc, thumbnail }: { items: any, title: string
     return (
         <React.Fragment>
             {modal == true && items.length > 0 && renderModal()}
-            <div className="card bg-base-100 shadow-xl bg-">
+            <div className="card p-3 bg-base-100 shadow-xl bg-">
                 <div className="cc-img">
                     <button onClick={() => setModal(true)} className={'slide active'} >
                         <img src={thumbnail} alt="" />
                     </button>
                 </div>
-                <div className="cc-item">
-                    <h1>{title}</h1>
-                    <p>{desc}</p>
-                </div>
+                <button onClick={() => setModal(true)} className="btn cc-item">
+                    <div className="cci-item">
+                        <h1>{title}</h1>
+                        <p>{desc}</p>
+                    </div>
+                </button>
             </div >
         </React.Fragment>
     )

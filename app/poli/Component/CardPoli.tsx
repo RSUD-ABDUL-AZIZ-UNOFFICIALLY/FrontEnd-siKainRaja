@@ -3,19 +3,19 @@ import React, { useEffect, useState, useRef } from 'react'
 import CardPoliModalItem from "./CardPoliModalItem";
 import axios from 'axios';
 
-const CardPoli = ({ id, name }: { id: String, name: String }) => {
+const CardPoli = ({ id, name, dokter }: { id: String, name: String, dokter: [string] }) => {
     const base_url = process.env.base_url;
     const [modal, setModal] = useState<boolean>(false)
     const [loadingModal, setLoadingModal] = useState<boolean>(false)
     const modalRef = useRef<any>(null);
     const [iniData, setData] = useState<any>([])
+
     const getData = async () => {
         try {
             const data = await axios({
                 method: 'get',
                 url: `${base_url}/poli/jadwal?kd_poli=${id}`,
             });
-
             if (data.data.data.length > 0) {
                 setData(data.data.data)
                 setModal(true)
@@ -73,27 +73,29 @@ const CardPoli = ({ id, name }: { id: String, name: String }) => {
     return (
         <div>
             {renderModal()}
-            {/* <div className="btn-card-head">{name}</div>
-                <div className="btn-card-body">
-                    <div className="nm-dr">Dokter :</div>
-                </div> */}
-            <div className="card w-full bg-base-100 shadow-xl">
-                <div className="card-body">
+            <div className="card w-full h-full bg-base-100 shadow-xl">
+                <div className="card-body static">
                     <div className="flex justify-center items-center">
                         <h2 className="font-bold text-center uppercase">{name}</h2>
                     </div>
-                    <div className='p-2'>
-                        <h3>Dokter : </h3>
-                        <ul className='pl-4'>
-                            <li>asdas</li>
-                            <li>asdas</li>
-                            <li>asdas   </li>
+                    <div className='p-2 mb-7 w-full'>
+                        <h3>Daftar Dokter : </h3>
+                        <ul className='pl-4 list-disc'>
+                            {dokter && dokter.map((item: string, index: number) => {
+                                return (
+                                    <React.Fragment>
+                                        <li className='mt-2 mb-2 text-xs'>{`${item}`}</li>
+                                    </React.Fragment>
+                                )
+                            })}
                         </ul>
                     </div>
-                    <div className="flex mt-4">
-                        <button onClick={() => handleModal()} className='btn btn-accent w-full'>
-                            Cek Jadwal
-                        </button>
+                    <div className="absolute left-0 bottom-2 w-full">
+                        <div className="flex justify-center">
+                            <button onClick={() => handleModal()} className='btn btn-accent'>
+                                Cek Jadwal
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

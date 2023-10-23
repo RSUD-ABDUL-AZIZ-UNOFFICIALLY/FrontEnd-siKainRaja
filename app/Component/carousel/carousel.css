@@ -1,10 +1,10 @@
 .cc-img {
   aspect-ratio: 16/9;
+  padding: 10px;
   display: flex;
   overflow: hidden;
   position: relative;
   justify-content: center;
-  border-radius: 10px;
 }
 .cc-img:hover .left {
   transform: translateX(0px);
@@ -18,10 +18,10 @@
 .cc-img .slide.active img {
   height: 100%;
   transition: ease-in-out 0.3s;
+  border-radius: 10px;
 }
 .cc-img .slide.active img:hover {
   transition: ease-in-out 0.3s;
-  transform: scale(1.05);
 }
 .cc-img .slide.non-active img {
   display: none;
@@ -29,12 +29,17 @@
 
 .cc-item {
   display: block;
+  width: 100%;
+}
+.cc-item .cci-item {
   padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  color: #000000;
+  text-align: center;
 }
-.cc-item h1 {
-  font-weight: bold;
-}
-.cc-item p {
+.cc-item .cci-item p {
   text-align: justify;
   font-size: 13px;
 }
@@ -61,7 +66,7 @@
   padding: 10px;
   display: block;
   position: fixed;
-  width: 70vw;
+  width: 60vw;
   aspect-ratio: 16/9;
 }
 

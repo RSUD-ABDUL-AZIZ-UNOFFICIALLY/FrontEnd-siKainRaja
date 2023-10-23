@@ -7,7 +7,7 @@ const CardVideo = ({ title, link, desc }: { title: string, link: string, desc: s
             <div className='card-video-head'>
                 <video src={link} controls loop={true}></video>
             </div>
-            <div className="card-video-item ">
+            <div className="card-video-item text-center">
                 <h1>{title}</h1>
                 <p>{desc}</p>
             </div>
