@@ -89,13 +89,13 @@ export default function Section() {
                 </div>
                 <div className="grid lg:grid-cols-3 grid-cols-1 gap-3">
                     {iniData ? iniData.map((item: any, index: any) => {
-                        if (leftPagination <= index && rightPagination > index) {
-                            return (
-                                <React.Fragment key={index}>
-                                    <CardLab kelas={item.kelas} id={item.kd_jenis_prw} name={item.nm_perawatan} />
-                                </React.Fragment>
-                            )
-                        }
+                        // if (leftPagination <= index && rightPagination > index) {
+                        return (
+                            <React.Fragment key={index}>
+                                <CardLab kelas={item.kelas} id={item.kd_jenis_prw} name={item.nm_perawatan} />
+                            </React.Fragment>
+                        )
+                        // }
                     })
                         :
                         <React.Fragment>
@@ -111,7 +111,7 @@ export default function Section() {
                         </React.Fragment>
                     }
                 </div>
-                <div className="join w-full justify-center mt-6 mb-3">
+                {/* <div className="join w-full justify-center mt-6 mb-3">
                     <button className="join-item btn" onClick={() => handleLeftPagination()} >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -123,7 +123,7 @@ export default function Section() {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
                     </button>
-                </div>
+                </div> */}
             </div>
         </div>
     )

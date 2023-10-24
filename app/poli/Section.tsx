@@ -76,7 +76,7 @@ export default function Section() {
                 <div className="grid gap-2 lg:grid-cols-3 grid-cols-1">
                     {loading == false ?
                         iniData.map((item: any, index: any) => {
-                            if (leftPagination <= index && rightPagination > index) {
+                            // if (leftPagination <= index && rightPagination > index) {
                                 return (
                                     <React.Fragment key={index}>
                                         <CardPoli
@@ -86,12 +86,12 @@ export default function Section() {
                                         />
                                     </React.Fragment>
                                 )
-                            }
+                            // }
                         })
                         : renderNoData()
                     }
                 </div>
-                <div className="join w-full justify-center mt-6 mb-3">
+                {/* <div className="join w-full justify-center mt-6 mb-3">
                     <button className="join-item btn" onClick={() => handleLeftPagination()} >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -103,7 +103,7 @@ export default function Section() {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
                     </button>
-                </div>
+                </div> */}
             </div>
         </div>
     )

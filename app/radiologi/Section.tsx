@@ -64,8 +64,8 @@ const Section = () => {
     return (
         <div className='flex justify-center'>
             <div className='section'>
-                <div className="grid lg:grid-cols-4 gap-2">
-                    <div className="lg:col-span-4">
+                <div className="grid lg:grid-cols-3 gap-2">
+                    <div className="lg:col-span-3">
                         <div className="form-control w-full mb-3">
                             <div className="input-group">
                                 <input type="text" value={keyword} onChange={(e) => setKeyword(e.target.value)} placeholder="Cari Pemeriksaan..." className="input input-bordered w-full" />
@@ -76,13 +76,13 @@ const Section = () => {
                         </div>
                     </div>
                     {dataRadiologi ? dataRadiologi.map((item: any, index: number) => {
-                        if (leftPagination <= index && rightPagination > index) {
+                        // if (leftPagination <= index && rightPagination > index) {
                             return (
                                 <React.Fragment key={index}>
                                     <CardRadiologi title={item.nm_perawatan} price={item.total_byr} />
                                 </React.Fragment>
                             )
-                        }
+                        // }
                     }
                     )
                         :
@@ -102,7 +102,7 @@ const Section = () => {
                         </React.Fragment>
                     }
                 </div>
-                <div className="join w-full justify-center mt-6 mb-3">
+                {/* <div className="join w-full justify-center mt-6 mb-3">
                     <button className="join-item btn" onClick={() => handleLeftPagination()} >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -114,7 +114,7 @@ const Section = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
                     </button>
-                </div>
+                </div> */}
             </div>
         </div>
     )
