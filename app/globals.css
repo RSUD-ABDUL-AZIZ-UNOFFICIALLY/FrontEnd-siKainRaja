@@ -17,13 +17,13 @@
 }
 
 .bg-rainbow1{
-  background: linear-gradient(to right, #f1fbff, #ffffff, #ffeefa);
+  background: linear-gradient(to right, #f1fbff, #ffeefa);
 }
 .bg-rainbow2{
-  background: linear-gradient(to right, #f9ffd9, #ffffff, #d6ffe2);
+  background: linear-gradient(to right, #f9ffd9, #d6ffe2);
 }
 .bg-rainbow3{
-  background: linear-gradient(to right, #ffe6e9, #ffffff, #fff8e0);
+  background: linear-gradient(to right, #ffe6e9, #fff8e0);
 }
 
 ::-webkit-scrollbar {
