@@ -1,13 +1,25 @@
 'use client'
 import Link from 'next/link'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 const Navbar = ({ name }: { name: string }) => {
     const [nav, setNav] = useState('')
+    const [dropdownTarif, setDropdownTarif] = useState<boolean>(false)
+    const refDropdownTarif = useRef(null)
+
+    const handleDropdownTarif = () => {
+        if (dropdownTarif == false) {
+            setDropdownTarif(true)
+        } else {
+            setDropdownTarif(false)
+        }
+    }
+
+    console.log(dropdownTarif);
 
     useEffect(() => {
         setNav(name)
-    }, [name])
+    }, [])
 
     return (
         <nav className='flex justify-center'>
@@ -38,11 +50,33 @@ const Navbar = ({ name }: { name: string }) => {
                             Radiologi
                         </div>
                     </Link>
+                    <div className="drop">
+                        <button ref={refDropdownTarif} onClick={() => handleDropdownTarif()} className={nav == 'tarif' ? "nb-dd navbar-item-active" : "nb-dd navbar-item"}>
+                            Tarif
+                        </button>
+                        {dropdownTarif == true &&
+                            <React.Fragment>
+                                <div className="absolute z-10 w-auto translate-y-3">
+                                    <div className="card shadow-md bg-base-100 p-2 gap-2">
+                                        {/* <div className="card-body"> */}
+                                        <Link href={'/tarif-ambulan'} className={nav == 'tarif-ambulan' ? "navbar-item-active" : "navbar-item"}>
+                                            Tarif Ambulan
+                                        </Link>
+                                        <Link href={'/tarif-ambulan'} className={nav == 'tarif-ambulan' ? "navbar-item-active" : "navbar-item"}>
+                                            Tarif Kabar
+                                        </Link>
+                                        {/* </div> */}
+                                    </div>
+                                </div>
+                            </React.Fragment>
+                        }
+                    </div>
                     <Link href={'/map'} className={nav == 'map' ? "navbar-item-active" : "navbar-item"}>
                         <div className="flex">
                             Map
                         </div>
                     </Link>
+
                 </div>
                 {/* <div className="flex">
                     <button className='navbar-item'>

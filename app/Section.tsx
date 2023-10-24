@@ -85,7 +85,7 @@ export default function Section() {
         <div className='flex justify-center'>
             <div className='section shadow-xl'>
                 {/* CARD HAK PASIEN */}
-                <div className={`card border w-full bg-base-100 shadow-xl mb-4 `}>
+                <div className={`card border w-full bg-rainbow1 shadow-xl mb-4 `}>
                     <div className="card-body p-0 overflow-hidden">
                         {dataHakPasien ?
                             <React.Fragment>
@@ -113,7 +113,7 @@ export default function Section() {
                                     })}
                                 </div>
                                 <div className='p-3'>
-                                    <button onClick={() => handleRead('hakpasien')} className="btn btn-accent w-full">
+                                    <button onClick={() => handleRead('hakpasien')} className="btn btn-ghost w-full">
                                         {readHakPasien == false ?
                                             <>
                                                 Baca Lebih Banyak
@@ -139,7 +139,7 @@ export default function Section() {
                 </div>
 
                 {/* CARD PROKES */}
-                <div className={`card border w-full bg-base-100 shadow-xl mb-4 `}>
+                <div className={`card border w-full bg-rainbow2 shadow-xl mb-4 `}>
                     <div className="card-body p-0 overflow-hidden">
                         {dataProkes ?
                             <React.Fragment>
@@ -158,7 +158,7 @@ export default function Section() {
                                     })}
                                 </div>
                                 <div className='p-3'>
-                                    <button onClick={() => handleRead('prokes')} className="btn btn-secondary w-full">
+                                    <button onClick={() => handleRead('prokes')} className="btn btn-ghost w-full">
                                         {readProkes == false ?
                                             <>
                                                 Baca Lebih Banyak
@@ -183,7 +183,7 @@ export default function Section() {
                 </div>
 
                 {/* CARD TATIB */}
-                <div className={`card border w-full bg-base-100 shadow-xl mb-4 `}>
+                <div className={`card border w-full bg-rainbow3 shadow-xl mb-4 `}>
                     <div className="card-body p-0 overflow-hidden">
                         {dataTatib ?
                             <React.Fragment>
@@ -249,7 +249,7 @@ export default function Section() {
                                     })}
                                 </div>
                                 <div className='p-3'>
-                                    <button onClick={() => handleRead('tatib')} className="btn btn-primary w-full">
+                                    <button onClick={() => handleRead('tatib')} className="btn btn-ghost w-full">
                                         {readTatib == false ?
                                             <>
                                                 Baca Lebih Banyak

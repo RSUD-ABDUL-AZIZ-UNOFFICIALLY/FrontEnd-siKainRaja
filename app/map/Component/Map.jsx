@@ -24,7 +24,7 @@ const Map = () => {
             if (data.data.data) {
                 const dataGeojson = data.data.data.features
                 setGeojson(dataGeojson)
-                console.log(dataGeojson);
+                // console.log(dataGeojson);
                 renderMap(dataGeojson)
             }
         } catch (error) {
@@ -32,8 +32,17 @@ const Map = () => {
         }
     }
 
+    const renderPop = () => {
+        return (
+            <React.Fragment>
+                <div className="rounded-md bg-base-100 p-3">
+                    asdg
+                </div>
+            </React.Fragment>
+        )
+    }
     const renderMap = (e) => {
-        console.log('e', e);
+        // console.log('e', e);
         if (map.current) return; // stops map from intializing more than once
 
         map.current = new maptilersdk.Map({
@@ -56,10 +65,9 @@ const Map = () => {
         map.current.on("load", () => {
             if (e !== null) {
                 for (let i = 0; i < e.length; i++) {
-                    console.log('wes', e[i].properties.name);
-                    console.log('coor', e[i].geometry.coordinates[0]);
+                    console.log('zz :', e[i]);
                     map.current.addLayer({
-                        id: e[i].properties.name, // Id lapisan polygon pertama
+                        id: e[i].properties.name,
                         type: "fill",
                         source: {
                             type: "geojson",
@@ -79,9 +87,8 @@ const Map = () => {
                         },
                     });
                     map.current.on('click', `${e[i].properties.name}`, (z) => {
-                        const feature = z.features[0];
                         popup.setHTML(`<h3>${e[i].properties.name}</h3>`);
-                        popup.setLngLat(feature.geometry.coordinates[0][0]).addTo(map.current)
+                        popup.setLngLat(z.lngLat).addTo(map.current)
                         // console.log('Layer clicked:', e.features[0]);
                     });
                 }

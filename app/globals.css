@@ -16,6 +16,16 @@
   }
 }
 
+.bg-rainbow1{
+  background: linear-gradient(to right, #f1fbff, #ffffff, #ffeefa);
+}
+.bg-rainbow2{
+  background: linear-gradient(to right, #f9ffd9, #ffffff, #d6ffe2);
+}
+.bg-rainbow3{
+  background: linear-gradient(to right, #ffe6e9, #ffffff, #fff8e0);
+}
+
 ::-webkit-scrollbar {
   width: 0px; /* Lebar scrollbar */
 }
@@ -42,6 +52,7 @@ body {
   border-radius: 10px;
   border-radius: 15px;
   overflow: hidden;
+  overflow-x: scroll;
   scrollbar-width: none;
   transition: 0.2s;
 }
@@ -56,7 +67,7 @@ body {
   border-radius: 12px;
   text-transform: capitalize;
   font-size: 15px;
-  width: 170px;
+  width: 150px;
 }
 .navbar-item:hover{
   background-color: #dedede;  
@@ -73,7 +84,7 @@ body {
   text-transform: capitalize;
   font-size: 15px;
   font-weight: bold;
-  width: 170px;
+  width: 150px;
 }
 .navbar-item:active{
   background-color: #dedede;
