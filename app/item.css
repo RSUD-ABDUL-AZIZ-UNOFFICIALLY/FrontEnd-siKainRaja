@@ -205,8 +205,8 @@
 }
 .myModal-item{
     backdrop-filter: blur(10px);
-    background-color: #00000082;
-    background-color: #ffffff;
+    /* background-color: #00000082;
+    background-color: #ffffff; */
     /* padding: 15px; */
     min-width: 80vw;
     max-width: 80vw;

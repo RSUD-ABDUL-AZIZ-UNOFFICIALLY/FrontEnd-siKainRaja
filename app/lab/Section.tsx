@@ -89,7 +89,8 @@ export default function Section() {
                 </div>
                 <div className="grid lg:grid-cols-3 grid-cols-1 gap-3">
                     {iniData ? iniData.map((item: any, index: any) => {
-                        // if (leftPagination <= index && rightPagination > index) {
+                        console.log(item);
+
                         return (
                             <React.Fragment key={index}>
                                 <CardLab kelas={item.kelas} id={item.kd_jenis_prw} name={item.nm_perawatan} />

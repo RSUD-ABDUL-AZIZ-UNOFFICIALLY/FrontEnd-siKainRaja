@@ -72,20 +72,20 @@ export default function Section() {
 
     return (
         <div className='flex justify-center '>
-            <div className='section'>
-                <div className="grid gap-2 lg:grid-cols-3 grid-cols-1">
+            <div className='section bg-green-600'>
+                <div className="grid gap-4 lg:grid-cols-3 grid-cols-1">
                     {loading == false ?
-                        iniData.map((item: any, index: any) => {
+                        iniData.map((item: any, index: number) => {
                             // if (leftPagination <= index && rightPagination > index) {
-                                return (
-                                    <React.Fragment key={index}>
-                                        <CardPoli
-                                            id={item.kd_poli}
-                                            name={item.poliklinik}
-                                            dokter={item.dokter}
-                                        />
-                                    </React.Fragment>
-                                )
+                            return (
+                                <React.Fragment key={index}>
+                                    <CardPoli
+                                        id={item.kd_poli}
+                                        name={item.poliklinik}
+                                        dokter={item.dokter}
+                                    />
+                                </React.Fragment>
+                            )
                             // }
                         })
                         : renderNoData()

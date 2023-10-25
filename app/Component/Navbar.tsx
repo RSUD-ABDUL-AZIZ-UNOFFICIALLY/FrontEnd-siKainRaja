@@ -15,7 +15,7 @@ const Navbar = ({ name }: { name: string }) => {
         }
     }
 
-    console.log(dropdownTarif);
+    // console.log(dropdownTarif);
 
     useEffect(() => {
         setNav(name)

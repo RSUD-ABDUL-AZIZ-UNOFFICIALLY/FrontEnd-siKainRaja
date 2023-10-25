@@ -14,7 +14,7 @@ const CardPoli = ({ id, name, dokter }: { id: String, name: String, dokter: [str
         try {
             const data = await axios({
                 method: 'get',
-                url: `${base_url}/poli/jadwal?kd_poli=${id}`,
+                url: `${base_url}/poli/drjadwal?kd_poli=${id}`,
             });
             if (data.data.data.length > 0) {
                 setData(data.data.data)
@@ -42,7 +42,7 @@ const CardPoli = ({ id, name, dokter }: { id: String, name: String, dokter: [str
             return (
                 <>
                     <div className="myModal">
-                        <div ref={modalRef} className="myModal-item">
+                        <div ref={modalRef} className="myModal-item bg-rainbow2">
                             <div className="myModal-item-head shadow-xl">
                                 <h1 className='uppercase'>{name}</h1>
                                 <button onClick={() => setModal(false)} className='btn-transparent'>
@@ -73,7 +73,7 @@ const CardPoli = ({ id, name, dokter }: { id: String, name: String, dokter: [str
     return (
         <div>
             {renderModal()}
-            <div className="card w-full h-full bg-base-100 shadow-xl">
+            <div className="card w-full h-full bg-rainbow2 shadow-xl">
                 <div className="card-body static">
                     <div className="flex justify-center items-center">
                         <h2 className="font-bold text-center uppercase">{name}</h2>
@@ -83,7 +83,7 @@ const CardPoli = ({ id, name, dokter }: { id: String, name: String, dokter: [str
                         <ul className='pl-4 list-disc'>
                             {dokter && dokter.map((item: string, index: number) => {
                                 return (
-                                    <React.Fragment>
+                                    <React.Fragment key={index}>
                                         <li className='mt-2 mb-2 text-xs'>{`${item}`}</li>
                                     </React.Fragment>
                                 )
@@ -92,7 +92,7 @@ const CardPoli = ({ id, name, dokter }: { id: String, name: String, dokter: [str
                     </div>
                     <div className="absolute left-0 bottom-2 w-full">
                         <div className="flex justify-center">
-                            <button onClick={() => handleModal()} className='btn btn-accent'>
+                            <button onClick={() => handleModal()} className='btn btn-accent text-white'>
                                 Cek Jadwal
                             </button>
                         </div>

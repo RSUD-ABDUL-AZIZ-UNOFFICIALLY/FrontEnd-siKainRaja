@@ -83,13 +83,13 @@ export default function Section() {
 
     return (
         <div className='flex justify-center'>
-            <div className='section shadow-xl'>
+            <div className='section'>
                 {/* CARD HAK PASIEN */}
-                <div className={`card border w-full bg-rainbow1 shadow-xl mb-4 `}>
+                <div className={`card border w-full bg-rainbow1 shadow-lg mb-5 `}>
                     <div className="card-body p-0 overflow-hidden">
                         {dataHakPasien ?
                             <React.Fragment>
-                                <h2 className="text-center font-bold shadow-md p-3 uppercase">{dataHakPasien.name}</h2>
+                                <h2 className="text-center font-bold p-3 uppercase">{dataHakPasien.name}</h2>
                                 <div className={`overflow-y-scroll transition-shadow p-3 ${readHakPasien == false ? 'h-40' : 'h-auto'}`}>
                                     {dataHakPasien.desc.map((item: any, index: any) => {
                                         return (
@@ -113,7 +113,7 @@ export default function Section() {
                                     })}
                                 </div>
                                 <div className='p-3'>
-                                    <button onClick={() => handleRead('hakpasien')} className="btn btn-ghost w-full">
+                                    <button onClick={() => handleRead('hakpasien')} className="btn bg-base-100 hover:bg-base-100 hover:shadow-sm w-full">
                                         {readHakPasien == false ?
                                             <>
                                                 Baca Lebih Banyak
@@ -139,11 +139,11 @@ export default function Section() {
                 </div>
 
                 {/* CARD PROKES */}
-                <div className={`card border w-full bg-rainbow2 shadow-xl mb-4 `}>
+                <div className={`card border w-full bg-rainbow1 shadow-xl mb-4 `}>
                     <div className="card-body p-0 overflow-hidden">
                         {dataProkes ?
                             <React.Fragment>
-                                <h2 className="text-center font-bold shadow-md p-3 uppercase">{dataProkes.name}</h2>
+                                <h2 className="text-center font-bold p-3 uppercase">{dataProkes.name}</h2>
                                 <div className={`overflow-y-scroll transition-shadow p-3 ${readProkes == false ? 'h-40' : 'h-auto'}`}>
                                     {dataProkes.desc.map((item: any, index: any) => {
                                         return (
@@ -158,7 +158,7 @@ export default function Section() {
                                     })}
                                 </div>
                                 <div className='p-3'>
-                                    <button onClick={() => handleRead('prokes')} className="btn btn-ghost w-full">
+                                    <button onClick={() => handleRead('prokes')} className="btn bg-base-100 hover:bg-base-100 hover:shadow-sm w-full">
                                         {readProkes == false ?
                                             <>
                                                 Baca Lebih Banyak
@@ -183,11 +183,11 @@ export default function Section() {
                 </div>
 
                 {/* CARD TATIB */}
-                <div className={`card border w-full bg-rainbow3 shadow-xl mb-4 `}>
+                <div className={`card border w-full bg-rainbow1 shadow-xl mb-4 `}>
                     <div className="card-body p-0 overflow-hidden">
                         {dataTatib ?
                             <React.Fragment>
-                                <h2 className="text-center font-bold shadow-md p-3 uppercase">{dataTatib.name}</h2>
+                                <h2 className="text-center font-bold p-3 uppercase">{dataTatib.name}</h2>
                                 <div className={`overflow-y-scroll transition-shadow p-3 ${readTatib == false ? 'h-40' : 'h-auto'}`}>
                                     {dataTatib.desc.map((item: any, index: any) => {
                                         return (
@@ -249,7 +249,7 @@ export default function Section() {
                                     })}
                                 </div>
                                 <div className='p-3'>
-                                    <button onClick={() => handleRead('tatib')} className="btn btn-ghost w-full">
+                                    <button onClick={() => handleRead('tatib')} className="btn bg-base-100 hover:bg-base-100 hover:shadow-sm w-full">
                                         {readTatib == false ?
                                             <>
                                                 Baca Lebih Banyak
