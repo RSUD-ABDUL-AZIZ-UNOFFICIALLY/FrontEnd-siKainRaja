@@ -83,7 +83,7 @@ export default function Section() {
 
     return (
         <div className='flex justify-center'>
-            <div className='section'>
+            <div className='section p-4 border border-accent'>
                 {/* CARD HAK PASIEN */}
                 <div className={`card border w-full bg-rainbow1 shadow-lg mb-5 `}>
                     <div className="card-body p-0 overflow-hidden">
@@ -112,8 +112,8 @@ export default function Section() {
                                         )
                                     })}
                                 </div>
-                                <div className='p-3'>
-                                    <button onClick={() => handleRead('hakpasien')} className="btn bg-base-100 hover:bg-base-100 hover:shadow-sm w-full">
+                                <div className='p-3 flex justify-center'>
+                                    <button onClick={() => handleRead('hakpasien')} className="btn btn-accent text-white btn-wide">
                                         {readHakPasien == false ?
                                             <>
                                                 Baca Lebih Banyak
@@ -157,8 +157,8 @@ export default function Section() {
                                         )
                                     })}
                                 </div>
-                                <div className='p-3'>
-                                    <button onClick={() => handleRead('prokes')} className="btn bg-base-100 hover:bg-base-100 hover:shadow-sm w-full">
+                                <div className='p-3 flex justify-center'>
+                                    <button onClick={() => handleRead('prokes')} className="btn btn-accent text-white btn-wide">
                                         {readProkes == false ?
                                             <>
                                                 Baca Lebih Banyak
@@ -248,8 +248,8 @@ export default function Section() {
                                         )
                                     })}
                                 </div>
-                                <div className='p-3'>
-                                    <button onClick={() => handleRead('tatib')} className="btn bg-base-100 hover:bg-base-100 hover:shadow-sm w-full">
+                                <div className='p-3 flex justify-center'>
+                                    <button onClick={() => handleRead('tatib')} className="btn btn-accent text-white btn-wide">
                                         {readTatib == false ?
                                             <>
                                                 Baca Lebih Banyak

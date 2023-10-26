@@ -42,7 +42,7 @@ const CardPoli = ({ id, name, dokter }: { id: String, name: String, dokter: [str
             return (
                 <>
                     <div className="myModal">
-                        <div ref={modalRef} className="myModal-item bg-rainbow2">
+                        <div ref={modalRef} className="myModal-item bg-rainbow1">
                             <div className="myModal-item-head shadow-xl">
                                 <h1 className='uppercase'>{name}</h1>
                                 <button onClick={() => setModal(false)} className='btn-transparent'>

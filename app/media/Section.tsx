@@ -6,6 +6,7 @@ import Carousel from '../Component/carousel/Carousel';
 import CardVideo from '../Component/cardvideo/CardVideo';
 import axios from 'axios';
 import SkeletonCard from '../Component/skeleton-card/SkeletonCard';
+import Skeleton from '../poli/Component/Skeleton';
 
 const Section = () => {
     const base_url = process.env.base_url;
@@ -18,7 +19,7 @@ const Section = () => {
                 method: 'get',
                 url: `${base_url}/media/edukasi`,
             });
-            
+
             if (data.data.data.data) {
                 setDataMedia(data.data.data.data)
             }
@@ -32,7 +33,7 @@ const Section = () => {
 
     return (
         <div className='flex justify-center'>
-            <div className="section">
+            <div className="section p-4 border border-accent">
                 <div className="grid lg:grid-cols-3 gap-4">
                     {dataMedia ? dataMedia.map((item: any, index: number) => {
                         return (
@@ -56,12 +57,15 @@ const Section = () => {
                         )
                     }) :
                         <React.Fragment>
-                            <SkeletonCard />
-                            <SkeletonCard />
-                            <SkeletonCard />
-                            <SkeletonCard />
-                            <SkeletonCard />
-                            <SkeletonCard />
+                            <Skeleton />
+                            <Skeleton />
+                            <Skeleton />
+                            <Skeleton />
+                            <Skeleton />
+                            <Skeleton />
+                            <Skeleton />
+                            <Skeleton />
+                            <Skeleton />
                         </React.Fragment>
                     }
                 </div>

@@ -78,7 +78,7 @@ export default function Section() {
 
     return (
         <div className='flex justify-center'>
-            <div className='section'>
+            <div className='section p-4 border border-accent'>
                 <div className="form-control w-full mb-3">
                     <div className="input-group">
                         <input type="text" value={keyword} onChange={(e) => setKeyword(e.target.value)} placeholder="Cari Pemeriksaan..." className="input input-bordered w-full" />

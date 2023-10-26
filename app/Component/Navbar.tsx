@@ -23,46 +23,46 @@ const Navbar = ({ name }: { name: string }) => {
 
     return (
         <nav className='flex justify-center'>
-            <div className="navbar">
+            <div className="navbar border border-accent">
                 <div className="flex gap-3">
-                    <Link href={'/'} className={nav == 'umum' ? "navbar-item-active" : "navbar-item"}>
+                    <Link href={'/'} className={nav == 'umum' ? "btn btn-accent text-white w-32" : "btn btn-outline btn-accent text-white w-32"}>
                         <div className="flex">
                             Informasi
                         </div>
                     </Link>
-                    <Link href={'/media'} className={nav == 'media' ? "navbar-item-active" : "navbar-item"}>
+                    <Link href={'/media'} className={nav == 'media' ? "btn btn-accent text-white w-32" : "btn btn-outline btn-accent text-white w-32"}>
                         <div className="flex">
                             Media
                         </div>
                     </Link>
-                    <Link href={'/poli'} className={nav == 'poli' ? "navbar-item-active" : "navbar-item"}>
+                    <Link href={'/poli'} className={nav == 'poli' ? "btn btn-accent text-white w-32" : "btn btn-outline btn-accent text-white w-32"}>
                         <div className="flex">
                             Poli
                         </div>
                     </Link>
-                    <Link href={'/lab'} className={nav == 'lab' ? "navbar-item-active" : "navbar-item"}>
+                    <Link href={'/lab'} className={nav == 'lab' ? "btn btn-accent text-white w-32" : "btn btn-outline btn-accent text-white w-32"}>
                         <div className="flex">
                             Lab
                         </div>
                     </Link>
-                    <Link href={'/radiologi'} className={nav == 'radiologi' ? "navbar-item-active" : "navbar-item"}>
+                    <Link href={'/radiologi'} className={nav == 'radiologi' ? "btn btn-accent text-white w-32" : "btn btn-outline btn-accent text-white w-32"}>
                         <div className="flex">
                             Radiologi
                         </div>
                     </Link>
                     <div className="drop">
-                        <button ref={refDropdownTarif} onClick={() => handleDropdownTarif()} className={nav == 'tarif' ? "nb-dd navbar-item-active" : "nb-dd navbar-item"}>
+                        <button ref={refDropdownTarif} onClick={() => handleDropdownTarif()} className={nav == 'tarif' ? "btn btn-accent text-white w-32" : "btn btn-outline btn-accent text-white w-32"}>
                             Tarif
                         </button>
                         {dropdownTarif == true &&
                             <React.Fragment>
-                                <div className="absolute z-10 w-auto translate-y-3">
-                                    <div className="card shadow-md bg-base-100 p-2 gap-2">
+                                <div className="absolute z-10 w-auto translate-y-5">
+                                    <div className="card shadow-lg bg-base-100 p-3 gap-2">
                                         {/* <div className="card-body"> */}
-                                        <Link href={'/tarif-ambulan'} className={nav == 'tarif-ambulan' ? "navbar-item-active" : "navbar-item"}>
+                                        <Link href={'/tarif-ambulan'} className={nav == 'tarif-ambulan' ? "btn btn-accent text-white w-32" : "btn btn-outline btn-accent text-white w-32"}>
                                             Tarif Ambulan
                                         </Link>
-                                        <Link href={'/tarif-ambulan'} className={nav == 'tarif-ambulan' ? "navbar-item-active" : "navbar-item"}>
+                                        <Link href={'/tarif-ambulan'} className={nav == 'tarif-ambulan' ? "btn btn-accent text-white w-32" : "btn btn-outline btn-accent text-white w-32"}>
                                             Tarif Kabar
                                         </Link>
                                         {/* </div> */}
@@ -71,7 +71,7 @@ const Navbar = ({ name }: { name: string }) => {
                             </React.Fragment>
                         }
                     </div>
-                    <Link href={'/map'} className={nav == 'map' ? "navbar-item-active" : "navbar-item"}>
+                    <Link href={'/map'} className={nav == 'map' ? "btn btn-accent text-white w-32" : "btn btn-outline btn-accent text-white w-32"}>
                         <div className="flex">
                             Map
                         </div>

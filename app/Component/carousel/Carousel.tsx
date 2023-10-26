@@ -76,10 +76,10 @@ const Carousel = ({ items, title, desc, thumbnail }: { items: any, title: string
                         <img src={thumbnail} alt="" />
                     </button>
                 </div>
-                <button onClick={() => setModal(true)} className="btn cc-item">
-                    <div className="cci-item">
+                <button onClick={() => setModal(true)} className="btn btn-accent cc-item">
+                    <div className="text-white">
                         <h1>{title}</h1>
-                        <p>{desc}</p>
+                        {/* <p>{desc}</p> */}
                     </div>
                 </button>
             </div >
