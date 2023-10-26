@@ -102,7 +102,7 @@ const Map = () => {
 
     return (
         <div>
-            <div ref={mapContainer} className="map" />
+            <div ref={mapContainer} className="map z-0" />
         </div>
     )
 }

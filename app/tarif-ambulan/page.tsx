@@ -11,7 +11,7 @@ export default function page() {
     return (
         <main>
             <Header />
-            <Navbar name={'radiologi'} />
+            <Navbar name={'tarif-ambulan'} />
             <BottomNavigation />
         </main>
     )

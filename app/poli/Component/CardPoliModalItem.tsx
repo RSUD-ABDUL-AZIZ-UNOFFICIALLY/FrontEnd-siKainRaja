@@ -10,8 +10,8 @@ const CardPoliModalItem = ({ data }: { data: any }) => {
                     console.log(item);
                     return (
                         <React.Fragment key={index}>
-                            <div className="carousel-item flex gap-3 lg:w-1/4 w-full">
-                                <div className={`card bg-white shadow-xl border ${data[index + 1] && `mr-3`}`}>
+                            <div className="carousel-item flex gap-3 lg:w-2/6 w-full">
+                                <div className={`card w-full bg-white shadow-xl border ${data[index + 1] && `mr-3`}`}>
                                     <figure className='flex justify-center items-center'>
                                         <img className='aspect-square w-full' src={`${item.url}`} />
                                     </figure>
