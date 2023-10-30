@@ -55,7 +55,7 @@ const Navbar = ({ name }: { name: string }) => {
                             Tarif Ambulan
                         </div>
                     </Link>
-                    <Link href={'#'} className={nav == 'tarif-tindakan' ? "btn btn-accent text-white w-32" : "btn btn-outline btn-accent text-white w-32"}>
+                    <Link href={'/tarif-tindakan'} className={nav == 'tarif-tindakan' ? "btn btn-accent text-white w-32" : "btn btn-outline btn-accent text-white w-32"}>
                         <div className="flex">
                             Tarif Tindakan
                         </div>

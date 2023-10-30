@@ -28,6 +28,9 @@
 .bg-rainbow4{
   background: linear-gradient(to right, #e6f6ff, #f9e0ff);
 }
+.bg-rainbow5{
+  background: linear-gradient(to right, #feffee, #f9dfff);
+}
 
 ::-webkit-scrollbar {
   /* width: 0px;  */

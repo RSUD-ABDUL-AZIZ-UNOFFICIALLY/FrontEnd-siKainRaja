@@ -42,7 +42,7 @@ export default function Section() {
         try {
             const data = await axios({
                 method: 'get',
-                url: `${base_url}/penunjang/jnslab`,
+                url: `${base_url}/penunjang/jnslab?search=${keyword}`,
             });
             if (data.data.data) {
                 setData(data.data.data)
@@ -55,36 +55,19 @@ export default function Section() {
         }
     }
 
-    const getKeyword = async () => {
-        try {
-            const data = await axios({
-                method: 'get',
-                url: `${base_url}/penunjang/jnslab?search=${keyword}`,
-            });
-            if (data.data.data) {
-                setLeftPagination(0)
-                setRightPagination(page)
-                setNumberPage(1)
-                setData(data.data.data)
-                setLoading(false)
-            }
-        } catch (error) {
-
-        }
-    }
     useEffect(() => {
         getData()
-    }, [])
+    }, [keyword])
 
     return (
         <div className='flex justify-center'>
             <div className='section p-4 border border-accent'>
                 <div className="form-control w-full mb-3">
-                    <div className="input-group">
+                    <div className="input">
                         <input type="text" value={keyword} onChange={(e) => setKeyword(e.target.value)} placeholder="Cari Pemeriksaan..." className="input input-accent input-bordered w-full" />
-                        <button onClick={() => getKeyword()} className="btn btn-accent btn-square">
+                        {/* <button onClick={() => getKeyword()} className="btn btn-accent btn-square">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                        </button>
+                        </button> */}
                     </div>
                 </div>
                 <div className="grid lg:grid-cols-3 grid-cols-1 gap-3">

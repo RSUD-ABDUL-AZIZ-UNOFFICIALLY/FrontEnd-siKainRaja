@@ -6,13 +6,13 @@ import Section from './Section'
 
 
 export const metadata = {
-    title: 'Informasi Ambulan',
+    title: 'Informasi Tarif Tindakan',
 }
 export default function page() {
     return (
         <main>
             <Header />
-            <Navbar name={'tarif-ambulan'} />
+            <Navbar name={'tarif-tindakan'} />
             <Section />
             <BottomNavigation />
         </main>

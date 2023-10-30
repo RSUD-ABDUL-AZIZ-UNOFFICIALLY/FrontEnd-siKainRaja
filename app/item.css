@@ -208,8 +208,8 @@
     /* background-color: #00000082;
     background-color: #ffffff; */
     /* padding: 15px; */
-    width: 80vw;
-    /* height: 90vh; */
+    width: 50vw;
+    max-height: 95vh;
     border-radius: 20px;
     /* border-color: #000000; */
     overflow: hidden;
