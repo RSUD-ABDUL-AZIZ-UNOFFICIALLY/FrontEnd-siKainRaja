@@ -11,10 +11,9 @@ const Section = () => {
         try {
             const data = await axios({
                 method: 'get',
-                url: `${base_url}/tarif/tindakan?search=x${keyword}`,
+                url: `${base_url}/tarif/tindakan?search=${keyword}`,
             });
             if (data.data.status == true) {
-                // console.log(data.data.data);
                 setData(data.data.data)
             }
 

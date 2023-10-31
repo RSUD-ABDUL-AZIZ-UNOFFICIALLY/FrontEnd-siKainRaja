@@ -10,9 +10,10 @@ export const metadata = {
 export default function Home() {
   return (
     <main className='main'>
+
       <Header />
       <Navbar name={'umum'} />
-      <Section  />
+      <Section />
       <BottomNavigation />
     </main>
   )

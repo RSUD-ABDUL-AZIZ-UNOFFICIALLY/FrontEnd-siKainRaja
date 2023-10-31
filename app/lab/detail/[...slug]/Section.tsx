@@ -23,17 +23,19 @@ const Section = ({ id, name }: { id: any, name: any }) => {
     }, [])
     return (
         <div className="flex justify-center">
-            <div className='section border-accent border p-4 grid'>
-                <div className="flex justify-between items-center">
-                    <div className='font-bold'>{`LAB ${name}`}</div>
-                    <Link href={'/lab'} className="btn btn-accent flex justify-center items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
+            <div className='section border-accent border grid'>
+                <div className="flex justify-end items-center">
+                    <Link href={'/lab'} className="btn btn-accent text-center flex justify-center items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-90deg-left text-white" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4z" />
                         </svg>
                     </Link>
                 </div>
-                <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 mt-3">
-                    {iniData && iniData.map((item: any, index: any) => (
+                <div className="mt-4 bg-rainbow2 p-2">
+                    <div className='text-center'>{`${name}`}</div>
+                </div>
+                <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 mt-3 p-4">
+                    {iniData && iniData.length > 0 ? iniData.map((item: any, index: any) => (
                         <React.Fragment key={index}>
                             {/* <div className="card-detail">
                                 <div className='font-bold text-center mb-6'>{item.Pemeriksaan}</div>
@@ -50,7 +52,14 @@ const Section = ({ id, name }: { id: any, name: any }) => {
                                 </div>
                             </div>
                         </React.Fragment>
-                    ))}
+                    ))
+                        :
+                        <React.Fragment>
+                            <div className="text-center">
+                                Tidak Ada Detail Informasi
+                            </div>
+                        </React.Fragment>
+                    }
                 </div>
             </div>
         </div>
