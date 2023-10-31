@@ -145,7 +145,7 @@ export default function Section() {
 
                 {/* CARD PROKES */}
                 <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 mb-4">
-                    <div className={`col-span-4 card border w-full bg-rainbow2 shadow-xl mb-4 `}>
+                    <div className={`lg:col-span-4 card border w-full bg-rainbow2 shadow-xl mb-4 `}>
                         <div className="card-body p-0 overflow-hidden">
                             {dataProkes ?
                                 <React.Fragment>
@@ -187,8 +187,8 @@ export default function Section() {
                             }
                         </div>
                     </div>
-                    <div className="col-span-2 card border overflow-hidden shadow-lg h-full w-full">
-                        <img className='h-full' src="/img/3d.jpg" alt="" />
+                    <div className="lg:col-span-2 card border overflow-hidden shadow-lg h-full w-full">
+                        <img className=' h-full' src="/img/3d.jpg" alt="" />
                     </div>
                 </div>
 
