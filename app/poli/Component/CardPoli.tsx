@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import CardPoliModalItem from "./CardPoliModalItem";
 import axios from 'axios';
+import Link from 'next/link';
 
 const CardPoli = ({ id, name, dokter }: { id: String, name: String, dokter: [string] }) => {
     const base_url = process.env.base_url;
@@ -91,10 +92,13 @@ const CardPoli = ({ id, name, dokter }: { id: String, name: String, dokter: [str
                         </ul>
                     </div>
                     <div className="absolute left-0 bottom-2 w-full">
-                        <div className="flex justify-center">
+                        <div className="flex gap-2 justify-center">
                             <button onClick={() => handleModal()} className='btn btn-accent text-white'>
                                 Cek Jadwal
                             </button>
+                            <Link href={`/poli/antrian/${id}/${name}`} className='btn btn-warning hover:bg-amber-500 text-white'>
+                                Cek Antrian
+                            </Link>
                         </div>
                     </div>
                 </div>

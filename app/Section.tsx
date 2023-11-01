@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import Dropdown from "./Component/DropdownItem"
 import axios from 'axios'
+import { Cookie } from 'next/font/google';
 
 export default function Section() {
     const base_url = process.env.base_url;
@@ -25,6 +26,13 @@ export default function Section() {
         } catch (error) {
 
         }
+    }
+
+    const setCookie = () => {
+
+        const decodedCookie = decodeURIComponent(document.cookie);
+        console.log(decodedCookie);
+
     }
     const getProkes = async () => {
         try {
@@ -86,12 +94,12 @@ export default function Section() {
             <div className='section p-4 border border-accent'>
                 {/* CARD HAK PASIEN */}
                 <div className="grid grid=-cols-1 lg:grid-cols-2 gap-4 mb-4">
-                    <div className={`col-span-1 card border w-full bg-rainbow1 shadow-lg  `}>
-                        <div className="card-body p-0 overflow-hidden">
+                    <div className={`col-span-1 card border w-full R bg-rainbow1 shadow-lg `}>
+                        <div className="card-body overflow-hidden aspect-square">
                             {dataHakPasien ?
                                 <React.Fragment>
-                                    <h2 className="text-center font-bold p-3 uppercase">{dataHakPasien.name}</h2>
-                                    <div className={`overflow-y-scroll transition-shadow p-3 ${readHakPasien == false ? 'h-80' : 'h-auto'}`}>
+                                    <h2 className="text-center font-bold p-3 shadow-xl uppercase rounded-md">{dataHakPasien.name}</h2>
+                                    <div className={`overflow-y-scroll transition-shadow p-3 ${readHakPasien == false ? '' : ''}`}>
                                         {dataHakPasien.desc.map((item: any, index: any) => {
                                             return (
                                                 <React.Fragment key={index}>
@@ -130,7 +138,7 @@ export default function Section() {
                                 </React.Fragment>
                                 :
                                 <React.Fragment>
-                                    <div className="flex justify-center items-center h-40">
+                                    <div className="flex justify-center items-center h-full">
                                         <span className="loading loading-spinner text-accent"></span>
                                     </div>
                                 </React.Fragment>
@@ -139,18 +147,22 @@ export default function Section() {
                         </div>
                     </div>
                     <div className="col-span-1 card border overflow-hidden shadow-lg h-full w-full">
-                        <img className='h-full' src="/img/ss.jpg" alt="" />
+                        <div className="avatar">
+                            <div className="rounded-xl">
+                                <img src="/img/ss.jpg" />
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 {/* CARD PROKES */}
                 <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 mb-4">
-                    <div className={`lg:col-span-4 card border w-full bg-rainbow2 shadow-xl mb-4 `}>
-                        <div className="card-body p-0 overflow-hidden">
+                    <div className={`lg:col-span-4 card border w-full R bg-rainbow2 shadow-xl `}>
+                        <div className="card-body  overflow-hidden">
                             {dataProkes ?
                                 <React.Fragment>
-                                    <h2 className="text-center font-bold p-3 uppercase">{dataProkes.name}</h2>
-                                    <div className={`overflow-y-scroll transition-shadow p-3 mb-4 ${readProkes == false ? 'h-auto' : 'h-auto'}`}>
+                                    <h2 className="text-center font-bold p-3 shadow-xl rounded-md uppercase">{dataProkes.name}</h2>
+                                    <div className={`overflow-y-scroll transition-shadow p-3  ${readProkes == false ? 'h-auto' : 'h-auto'}`}>
                                         {dataProkes.desc.map((item: any, index: any) => {
                                             return (
                                                 <React.Fragment key={index}>
@@ -180,7 +192,7 @@ export default function Section() {
                                 </React.Fragment>
                                 :
                                 <React.Fragment>
-                                    <div className="flex justify-center items-center h-40">
+                                    <div className="flex justify-center items-center h-full">
                                         <span className="loading loading-spinner text-secondary"></span>
                                     </div>
                                 </React.Fragment>
@@ -188,99 +200,112 @@ export default function Section() {
                         </div>
                     </div>
                     <div className="lg:col-span-2 card border overflow-hidden shadow-lg h-full w-full">
-                        <img className=' h-full' src="/img/3d.jpg" alt="" />
+                        {/* <img className=' h-full' src="/img/3d.jpg" alt="" /> */}
+                        <div className="avatar">
+                            <div className="rounded-xl">
+                                <img src="/img/aa3.png" />
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 {/* CARD TATIB */}
-                {/* <div className="grid grid-cols-6"></div>  health 3d illustration*/}
-                <div className={`card border w-full bg-rainbow1 shadow-xl mb-4 `}>
-                    <div className="card-body p-0 overflow-hidden">
-                        {dataTatib ?
-                            <React.Fragment>
-                                <h2 className="text-center font-bold p-3 uppercase">{dataTatib.name}</h2>
-                                <div className={`overflow-y-scroll transition-shadow p-3 ${readTatib == false ? 'h-40' : 'h-auto'}`}>
-                                    {dataTatib.desc.map((item: any, index: any) => {
-                                        return (
-                                            <React.Fragment key={index}>
-                                                <div className='grid text-justify'>
-                                                    <div className="font-semibold ">
-                                                        {`${index + 1}. ${item.title}`}
-                                                    </div>
-                                                    {item.desc && item.desc.map((item2: any, index: any) => {
-                                                        return ((
-                                                            <React.Fragment key={index}>
-                                                                <div className="grid text-dropdown ml-6">
-                                                                    {item2.title ?
-                                                                        <React.Fragment>
-                                                                            <div className="">
-                                                                                <div className="font-semibold">
-                                                                                    {item2.title}
+                <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 mb-4">
+                    <div className={`lg:col-span-3 card border w-full R bg-rainbow1 shadow-xl`}>
+                        <div className="card-body overflow-hidden aspect-square">
+                            {dataTatib ?
+                                <React.Fragment>
+                                    <h2 className="text-center font-bold p-3 shadow-xl uppercase rounded-md">{dataTatib.name}</h2>
+                                    <div className={`overflow-y-scroll transition-shadow p-3  ${readTatib == false ? '' : 'h-auto'}`}>
+                                        {dataTatib.desc.map((item: any, index: any) => {
+                                            return (
+                                                <React.Fragment key={index}>
+                                                    <div className='grid text-justify'>
+                                                        <div className="font-semibold ">
+                                                            {`${index + 1}. ${item.title}`}
+                                                        </div>
+                                                        {item.desc && item.desc.map((item2: any, index: any) => {
+                                                            return ((
+                                                                <React.Fragment key={index}>
+                                                                    <div className="grid text-dropdown ml-6">
+                                                                        {item2.title ?
+                                                                            <React.Fragment>
+                                                                                <div className="">
+                                                                                    <div className="font-semibold">
+                                                                                        {item2.title}
+                                                                                    </div>
+                                                                                    {item2.desc && item2.desc.map((item3: any, index: any) => {
+                                                                                        return (
+                                                                                            item3.title ?
+                                                                                                <React.Fragment key={index}>
+                                                                                                    <div className='ml-6 font-semibold'>{`${index + 1}. ${item3.title}`}</div>
+                                                                                                    {item3.desc && item3.desc.map((item4: any, index: any) => {
+                                                                                                        return (
+                                                                                                            <div key={index + 100} className=' ml-8 flex'>
+                                                                                                                {`${index + 1}. ${item4}`}
+                                                                                                            </div>
+                                                                                                        )
+                                                                                                    })
+                                                                                                    }
+                                                                                                </React.Fragment>
+                                                                                                :
+                                                                                                <React.Fragment key={index}>
+                                                                                                    <div className="flex ml-6">
+                                                                                                        {`${index + 1}. ${item3}`}
+                                                                                                    </div>
+                                                                                                </React.Fragment>
+                                                                                        )
+                                                                                    })}
                                                                                 </div>
-                                                                                {item2.desc && item2.desc.map((item3: any, index: any) => {
-                                                                                    return (
-                                                                                        item3.title ?
-                                                                                            <React.Fragment key={index}>
-                                                                                                <div className='ml-6 font-semibold'>{`${index + 1}. ${item3.title}`}</div>
-                                                                                                {item3.desc && item3.desc.map((item4: any, index: any) => {
-                                                                                                    return (
-                                                                                                        <div key={index + 100} className=' ml-8 flex'>
-                                                                                                            {`${index + 1}. ${item4}`}
-                                                                                                        </div>
-                                                                                                    )
-                                                                                                })
-                                                                                                }
-                                                                                            </React.Fragment>
-                                                                                            :
-                                                                                            <React.Fragment key={index}>
-                                                                                                <div className="flex ml-6">
-                                                                                                    {`${index + 1}. ${item3}`}
-                                                                                                </div>
-                                                                                            </React.Fragment>
-                                                                                    )
-                                                                                })}
-                                                                            </div>
-                                                                        </React.Fragment>
-                                                                        :
-                                                                        <React.Fragment key={index}>
-                                                                            <div className="grid">
-                                                                                <div className=" text-justify">
-                                                                                    {item2.desc}
+                                                                            </React.Fragment>
+                                                                            :
+                                                                            <React.Fragment key={index}>
+                                                                                <div className="grid">
+                                                                                    <div className=" text-justify">
+                                                                                        {item2.desc}
+                                                                                    </div>
                                                                                 </div>
-                                                                            </div>
-                                                                        </React.Fragment>
-                                                                    }
-                                                                </div>
-                                                            </React.Fragment>
-                                                        ))
-                                                    })}
-                                                </div >
-                                            </React.Fragment>
-                                        )
-                                    })}
-                                </div>
-                                <div className='p-3 flex justify-center'>
-                                    <button onClick={() => handleRead('tatib')} className="btn btn-accent text-white btn-wide">
-                                        {readTatib == false ?
-                                            <>
-                                                Baca Lebih Banyak
-                                            </>
-                                            :
-                                            <>
-                                                Baca Lebih Sedikit
-                                            </>
+                                                                            </React.Fragment>
+                                                                        }
+                                                                    </div>
+                                                                </React.Fragment>
+                                                            ))
+                                                        })}
+                                                    </div >
+                                                </React.Fragment>
+                                            )
+                                        })}
+                                    </div>
+                                    {/* <div className='p-3 flex justify-center'>
+                                        <button onClick={() => handleRead('tatib')} className="btn btn-accent text-white btn-wide">
+                                            {readTatib == false ?
+                                                <>
+                                                    Baca Lebih Banyak
+                                                </>
+                                                :
+                                                <>
+                                                    Baca Lebih Sedikit
+                                                </>
 
-                                        }
-                                    </button>
-                                </div>
-                            </React.Fragment>
-                            :
-                            <React.Fragment>
-                                <div className="flex justify-center items-center h-40">
-                                    <span className="loading loading-spinner text-primary"></span>
-                                </div>
-                            </React.Fragment>
-                        }
+                                            }
+                                        </button>
+                                    </div> */}
+                                </React.Fragment>
+                                :
+                                <React.Fragment>
+                                    <div className="flex justify-center items-center h-40">
+                                        <span className="loading loading-spinner text-primary"></span>
+                                    </div>
+                                </React.Fragment>
+                            }
+                        </div>
+                    </div>
+                    <div className="lg:col-span-3 card border overflow-hidden shadow-lg h-full w-full">
+                        <div className="avatar">
+                            <div className="rounded-xl">
+                                <img src="/img/aa4.jpg" />
+                            </div>
+                        </div>
                     </div>
                 </div>
                 {/* <Dropdown
