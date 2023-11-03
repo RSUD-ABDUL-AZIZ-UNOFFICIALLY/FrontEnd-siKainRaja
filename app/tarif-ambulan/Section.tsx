@@ -23,6 +23,18 @@ const Section = () => {
         }
     }
 
+    const random = [
+        'bg-red-100',
+        'bg-yellow-100',
+        'bg-blue-100',
+        'bg-green-100',
+        'bg-orange-100',
+        'bg-emerald-100',
+        'bg-purple-100',
+    ]
+
+
+
     useEffect(() => {
         getData()
     }, [keyword])
@@ -31,7 +43,7 @@ const Section = () => {
             <div className='section p-4 border border-accent'>
                 <div className="grid lg:grid-cols-3 gap-4">
                     <div className="lg:col-span-3">
-                        <div className="form-control w-full mb-3">
+                        <div className="form-control bg-white w-full mb-3">
                             <div className="input">
                                 <input type="text" value={keyword} onChange={(e) => setKeyword(e.target.value)} placeholder="Cari Lokasi..." className="input input-accent input-bordered w-full" />
                                 {/* <button onClick={() => getKeyword()} className="btn btn-accent btn-square">
@@ -41,13 +53,13 @@ const Section = () => {
                         </div>
                     </div>
                     {iniData ? iniData.map((item: any, index: number) => {
-
+                        const randomColorClass = random[Math.floor(Math.random() * random.length)];
                         return (
                             <React.Fragment key={index}>
-                                <div className="col-span-1 card shadow-lg bg-rainbow4">
+                                <div className={`col-span-1 card shadow-lg ${randomColorClass}`}>
                                     <div className="card-body flex justify-center">
                                         <div className="pb-4">
-                                            <h1 className='text-center p-2 rounded-md shadow-md uppercase'>{item.nama}</h1>
+                                            <h1 className='text-center font-bold p-2 rounded-md uppercase'>{item.nama}</h1>
                                         </div>
                                         <div className="grid grid-cols-5">
                                             {/* JARAK */}

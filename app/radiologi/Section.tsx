@@ -66,7 +66,7 @@ const Section = () => {
             <div className='section p-4 border border-accent'>
                 <div className="grid lg:grid-cols-3 gap-4">
                     <div className="lg:col-span-3">
-                        <div className="form-control w-full mb-3">
+                        <div className="form-control bg-white w-full mb-3">
                             <div className="input">
                                 <input type="text" value={keyword} onChange={(e) => setKeyword(e.target.value)} placeholder="Cari Pemeriksaan..." className="input input-accent  input-bordered w-full" />
                                 {/* <button onClick={() => getKeyword()} className="btn btn-accent btn-square">
@@ -79,7 +79,7 @@ const Section = () => {
                         // if (leftPagination <= index && rightPagination > index) {
                         return (
                             <React.Fragment key={index}>
-                                <CardRadiologi title={item.nm_perawatan} price={item.total_byr} />
+                                <CardRadiologi index={index} title={item.nm_perawatan} price={item.total_byr} />
                             </React.Fragment>
                         )
                         // }

@@ -95,11 +95,11 @@ export default function Section() {
                 {/* CARD HAK PASIEN */}
                 <div className="grid grid=-cols-1 lg:grid-cols-2 gap-4 mb-4">
                     <div className={`col-span-1 card border w-full R bg-rainbow1 shadow-lg `}>
-                        <div className="card-body overflow-hidden aspect-square">
+                        <div className="card-body lg:p-10 p-5 overflow-hidden aspect-square ">
                             {dataHakPasien ?
                                 <React.Fragment>
                                     <h2 className="text-center font-bold p-3 shadow-xl uppercase rounded-md">{dataHakPasien.name}</h2>
-                                    <div className={`overflow-y-scroll transition-shadow p-3 ${readHakPasien == false ? '' : ''}`}>
+                                    <div className={`overflow-y-scroll gas-scroll  transition-shadow p-3 ${readHakPasien == false ? '' : ''}`}>
                                         {dataHakPasien.desc.map((item: any, index: any) => {
                                             return (
                                                 <React.Fragment key={index}>
@@ -157,8 +157,8 @@ export default function Section() {
 
                 {/* CARD PROKES */}
                 <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 mb-4">
-                    <div className={`lg:col-span-4 card border w-full R bg-rainbow2 shadow-xl `}>
-                        <div className="card-body  overflow-hidden">
+                    <div className={`lg:col-span-5 card border w-full R bg-rainbow2 shadow-xl `}>
+                        <div className="card-body lg:p-10 p-5 overflow-hidden">
                             {dataProkes ?
                                 <React.Fragment>
                                     <h2 className="text-center font-bold p-3 shadow-xl rounded-md uppercase">{dataProkes.name}</h2>
@@ -199,10 +199,10 @@ export default function Section() {
                             }
                         </div>
                     </div>
-                    <div className="lg:col-span-2 card border overflow-hidden shadow-lg h-full w-full">
+                    <div className="lg:col-span-1 card border overflow-hidden shadow-lg h-full w-full">
                         {/* <img className=' h-full' src="/img/3d.jpg" alt="" /> */}
-                        <div className="avatar">
-                            <div className="rounded-xl">
+                        <div className="avatar h-full">
+                            <div className="rounded-xl h-full w-full">
                                 <img src="/img/aa3.png" />
                             </div>
                         </div>
@@ -212,7 +212,7 @@ export default function Section() {
                 {/* CARD TATIB */}
                 <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 mb-4">
                     <div className={`lg:col-span-3 card border w-full R bg-rainbow1 shadow-xl`}>
-                        <div className="card-body overflow-hidden aspect-square">
+                        <div className="card-body lg:p-10 p-5 overflow-hidden aspect-square">
                             {dataTatib ?
                                 <React.Fragment>
                                     <h2 className="text-center font-bold p-3 shadow-xl uppercase rounded-md">{dataTatib.name}</h2>
@@ -293,7 +293,7 @@ export default function Section() {
                                 </React.Fragment>
                                 :
                                 <React.Fragment>
-                                    <div className="flex justify-center items-center h-40">
+                                    <div className="flex justify-center items-center h-full">
                                         <span className="loading loading-spinner text-primary"></span>
                                     </div>
                                 </React.Fragment>
@@ -302,7 +302,7 @@ export default function Section() {
                     </div>
                     <div className="lg:col-span-3 card border overflow-hidden shadow-lg h-full w-full">
                         <div className="avatar">
-                            <div className="rounded-xl">
+                            <div className="rounded-xl w-full">
                                 <img src="/img/aa4.jpg" />
                             </div>
                         </div>

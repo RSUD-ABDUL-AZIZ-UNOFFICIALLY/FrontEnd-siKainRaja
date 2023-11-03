@@ -31,11 +31,19 @@
 .bg-rainbow5{
   background: linear-gradient(to right, #feffee, #f9dfff);
 }
-
 ::-webkit-scrollbar {
-  /* width: 0px;  */
-  display: none;
+  width: 5px; /* Width of the scrollbar */
 }
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Track (background) color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b2aeae; /* Thumb (the draggable part) color */
+  border-radius: 6px; /* Rounded corners */
+}
+
 
 body {
  /* background: url('../public/img/bgs.avif'); */
@@ -214,6 +222,19 @@ body {
   position: relative;
 }
 @media (max-width: 1230px) {
+  ::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent; /* Track (background) color */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #b2aeae; /* Thumb (the draggable part) color */
+    border-radius: 6px; /* Rounded corners */
+  }
+  
   .navbar{
     min-width: 90vw;
     max-width: 90vw;
@@ -224,6 +245,19 @@ body {
   }
 }
 @media (max-width: 767px) {
+  ::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent; /* Track (background) color */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #b2aeae; /* Thumb (the draggable part) color */
+    border-radius: 6px; /* Rounded corners */
+  }
+  
   .header-item{
     justify-content: flex-start;
     transition: ease-in-out 0.3s;
