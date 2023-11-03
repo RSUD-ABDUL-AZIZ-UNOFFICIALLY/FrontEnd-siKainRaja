@@ -94,8 +94,8 @@ export default function Section() {
             <div className='section p-4 border border-accent'>
                 {/* CARD HAK PASIEN */}
                 <div className="grid grid=-cols-1 lg:grid-cols-2 gap-4 mb-4">
-                    <div className={`col-span-1 card border w-full R bg-rainbow1 shadow-lg `}>
-                        <div className="card-body lg:p-10 p-5 overflow-hidden aspect-square ">
+                    <div className={`col-span-1 card border w-full bg-rainbow1 shadow-lg `}>
+                        <div className="card-body lg:p-10 p-5 overflow-hidden lg:aspect-square aspect-[9/16] ">
                             {dataHakPasien ?
                                 <React.Fragment>
                                     <h2 className="text-center font-bold p-3 shadow-xl uppercase rounded-md">{dataHakPasien.name}</h2>
@@ -212,7 +212,7 @@ export default function Section() {
                 {/* CARD TATIB */}
                 <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 mb-4">
                     <div className={`lg:col-span-3 card border w-full R bg-rainbow1 shadow-xl`}>
-                        <div className="card-body lg:p-10 p-5 overflow-hidden aspect-square">
+                        <div className="card-body lg:p-10 p-5 overflow-hidden lg:aspect-square aspect-[9/16]">
                             {dataTatib ?
                                 <React.Fragment>
                                     <h2 className="text-center font-bold p-3 shadow-xl uppercase rounded-md">{dataTatib.name}</h2>
