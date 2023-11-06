@@ -25,42 +25,42 @@ const Navbar = ({ name }: { name: string }) => {
         <nav className='flex justify-center'>
             <div className="bg-white rounded-lg max-w-[90vw] shadow overflow-hidden overflow-x-scroll">
                 <div className="flex items-center m-2 gap-3">
-                    <Link href={'/'} className={nav == 'umum' ? "btn border-none bg-emerald-400 text-gray-100 hover:bg-emerald-500  w-32" : "btn w-32 bg-white border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-white"}>
+                    <Link href={'/'} className={nav == 'umum' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32" : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
                         <div className="flex">
                             Informasi
                         </div>
                     </Link>
-                    <Link href={'/media'} className={nav == 'media' ? "btn border-none bg-emerald-400 text-gray-100 hover:bg-emerald-500  w-32" : "btn w-32 bg-white border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-white"}>
+                    <Link href={'/media'} className={nav == 'media' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32" : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
                         <div className="flex">
                             Media
                         </div>
                     </Link>
-                    <Link href={'/poli'} className={nav == 'poli' ? "btn border-none bg-emerald-400 text-gray-100 hover:bg-emerald-500  w-32" : "btn w-32 bg-white border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-white"}>
+                    <Link href={'/poli'} className={nav == 'poli' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32" : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
                         <div className="flex">
                             Poli
                         </div>
                     </Link>
-                    <Link href={'/lab'} className={nav == 'lab' ? "btn border-none bg-emerald-400 text-gray-100 hover:bg-emerald-500  w-32" : "btn w-32 bg-white border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-white"}>
+                    <Link href={'/lab'} className={nav == 'lab' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32" : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
                         <div className="flex">
                             Tarif Lab
                         </div>
                     </Link>
-                    <Link href={'/radiologi'} className={nav == 'radiologi' ? "btn border-none bg-emerald-400 text-gray-100 hover:bg-emerald-500  w-32" : "btn w-32 bg-white border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-white"}>
+                    <Link href={'/radiologi'} className={nav == 'radiologi' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32" : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
                         <div className="flex">
                             Tarif Radiologi
                         </div>
                     </Link>
-                    <Link href={'/tarif-ambulan'} className={nav == 'tarif-ambulan' ? "btn border-none bg-emerald-400 text-gray-100 hover:bg-emerald-500  w-32" : "btn w-32 bg-white border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-white"}>
+                    <Link href={'/tarif-ambulan'} className={nav == 'tarif-ambulan' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32" : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
                         <div className="flex">
                             Tarif Ambulan
                         </div>
                     </Link>
-                    <Link href={'/tarif-tindakan'} className={nav == 'tarif-tindakan' ? "btn border-none bg-emerald-400 text-gray-100 hover:bg-emerald-500  w-32" : "btn w-32 bg-white border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-white"}>
+                    <Link href={'/tarif-tindakan'} className={nav == 'tarif-tindakan' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32" : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
                         <div className="flex">
                             Tarif Tindakan
                         </div>
                     </Link>
-                    <Link href={'/map'} className={nav == 'map' ? "btn border-none bg-emerald-400 text-gray-100 hover:bg-emerald-500  w-32 " : "btn w-32 bg-white border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-white"}>
+                    <Link href={'/map'} className={nav == 'map' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32 " : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
                         <div className="flex">
                             Map
                         </div>

@@ -32,17 +32,10 @@
   background: linear-gradient(to right, #feffee, #f9dfff);
 }
 ::-webkit-scrollbar {
-  width: 5px; /* Width of the scrollbar */
+  width: 0px; /* Width of the scrollbar */
+  display: none;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent; /* Track (background) color */
-}
-
-::-webkit-scrollbar-thumb {
-  background: #b2aeae; /* Thumb (the draggable part) color */
-  border-radius: 6px; /* Rounded corners */
-}
 
 
 body {

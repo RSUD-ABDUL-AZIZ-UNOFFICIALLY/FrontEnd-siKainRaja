@@ -65,7 +65,6 @@ const Map = () => {
         map.current.on("load", () => {
             if (e !== null) {
                 for (let i = 0; i < e.length; i++) {
-                    console.log('zz :', e[i]);
                     map.current.addLayer({
                         id: e[i].properties.name,
                         type: "fill",
