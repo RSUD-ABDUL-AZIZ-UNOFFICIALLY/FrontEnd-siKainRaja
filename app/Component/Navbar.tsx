@@ -60,6 +60,11 @@ const Navbar = ({ name }: { name: string }) => {
                             Tarif Tindakan
                         </div>
                     </Link>
+                    <Link href={'/donor'} className={nav == 'donor' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32 " : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
+                        <div className="flex">
+                            Donor
+                        </div>
+                    </Link>
                     <Link href={'/map'} className={nav == 'map' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32 " : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
                         <div className="flex">
                             Map
