@@ -27,22 +27,22 @@ const Navbar = ({ name }: { name: string }) => {
                 <div className="flex items-center m-2 gap-3">
                     <Link href={'/'} className={nav == 'umum' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32" : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
                         <div className="flex">
-                            Informasi
+                            Informasi Umum
                         </div>
                     </Link>
                     <Link href={'/media'} className={nav == 'media' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32" : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
                         <div className="flex">
-                            Media
+                            Media Edukasi
                         </div>
                     </Link>
                     <Link href={'/poli'} className={nav == 'poli' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32" : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
                         <div className="flex">
-                            Poli
+                            Informasi Poliklinik
                         </div>
                     </Link>
                     <Link href={'/daftar-kamar'} className={nav == 'kamar' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32" : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
                         <div className="flex">
-                            Daftar Kamar
+                            Ketersediaan Kamar
                         </div>
                     </Link>
                     <Link href={'/lab'} className={nav == 'lab' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32" : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
@@ -67,12 +67,12 @@ const Navbar = ({ name }: { name: string }) => {
                     </Link>
                     <Link href={'/donor'} className={nav == 'donor' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32 " : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
                         <div className="flex">
-                            Donor
+                            Grup PenDonor
                         </div>
                     </Link>
                     <Link href={'/map'} className={nav == 'map' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32 " : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
                         <div className="flex">
-                            Map
+                            Map Rumah Sakit
                         </div>
                     </Link>
                 </div>
