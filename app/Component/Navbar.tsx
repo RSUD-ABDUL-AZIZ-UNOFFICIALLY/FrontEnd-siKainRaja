@@ -40,6 +40,11 @@ const Navbar = ({ name }: { name: string }) => {
                             Poli
                         </div>
                     </Link>
+                    <Link href={'/daftar-kamar'} className={nav == 'kamar' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32" : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
+                        <div className="flex">
+                            Daftar Kamar
+                        </div>
+                    </Link>
                     <Link href={'/lab'} className={nav == 'lab' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32" : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
                         <div className="flex">
                             Tarif Lab
