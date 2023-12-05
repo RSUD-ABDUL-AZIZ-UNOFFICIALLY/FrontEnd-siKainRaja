@@ -24,7 +24,7 @@ const Map = () => {
             if (data.data.data) {
                 const dataGeojson = data.data.data.features
                 setGeojson(dataGeojson)
-                // console.log(dataGeojson);
+                console.log(dataGeojson);
                 renderMap(dataGeojson)
             }
         } catch (error) {

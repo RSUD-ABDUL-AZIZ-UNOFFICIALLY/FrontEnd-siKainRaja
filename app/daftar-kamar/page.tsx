@@ -4,7 +4,7 @@ import Navbar from '../Component/Navbar'
 import Section from './Section'
 
 export const metadata = {
-    title: 'Informasi Donor',
+    title: 'Informasi Daftar Kamar',
 }
 export default function page() {
     return (
