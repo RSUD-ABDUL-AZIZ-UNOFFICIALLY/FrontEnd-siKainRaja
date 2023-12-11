@@ -1,16 +1,16 @@
 /** @type {import('next').NextConfig} */
 require('dotenv').config();
-// const nextConfig = {
-//     eslint: {
-//         ignoreDuringBuilds: true,
-//     },
-// }
+const withPWA = require('next-pwa')({
+    dest: 'public'
+})
 
-module.exports = {
+
+module.exports = withPWA({
     eslint: {
-        ignoreDuringBuilds: true,
+        ignoreDuringBuilds: false,
     },
     env: {
         base_url: process.env.base_url,
     },
-}
+    // NextConfig
+})
