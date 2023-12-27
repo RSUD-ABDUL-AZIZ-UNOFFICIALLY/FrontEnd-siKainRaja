@@ -62,7 +62,7 @@ const Section = () => {
         getData()
     }, [keyword])
     return (
-        <div className='flex justify-center'>
+        <div className='justify-center'>
             <div className='section p-4 border border-accent'>
                 <div className="grid lg:grid-cols-3 gap-4">
                     <div className="lg:col-span-3">

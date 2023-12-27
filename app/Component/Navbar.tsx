@@ -23,7 +23,7 @@ const Navbar = ({ name }: { name: string }) => {
 
     return (
         <nav className='flex justify-center'>
-            <div className="bg-white rounded-lg max-w-[90vw] shadow overflow-hidden overflow-x-scroll">
+            <div className="bg-white lg:rounded-lg shadow-md overflow-hidden overflow-x-scroll">
                 <div className="flex items-center m-2 gap-3">
                     <Link href={'/'} className={nav == 'umum' ? "btn border-none bg-accent hover:bg-accent text-gray-100  w-32" : "btn w-32 bg-white border-accent text-accent hover:bg-accent hover:text-white"}>
                         <div className="flex">

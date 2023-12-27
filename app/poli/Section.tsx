@@ -71,7 +71,7 @@ export default function Section() {
     }
 
     return (
-        <div className='flex justify-center '>
+        <div className='justify-center '>
             <div className='section p-4 border border-accent'>
                 <div className="grid gap-4 lg:grid-cols-3 grid-cols-1">
                     {loading == false ?

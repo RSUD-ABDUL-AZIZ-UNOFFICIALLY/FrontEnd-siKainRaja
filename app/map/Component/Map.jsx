@@ -56,9 +56,9 @@ const Map = () => {
             'Ini Anda'
         );
 
-        new maptilersdk.Marker({ color: "#3b82f6" })
+        new maptilersdk.Marker({ color: "red" })
             .setLngLat(iniPosition)
-            .setPopup(popup)
+            .setPopup(new maptilersdk.Popup().setHTML("RSUD dr Adbul Aziz"))
             .addTo(map.current);
 
 
@@ -81,8 +81,8 @@ const Map = () => {
                         },
                         layout: {},
                         paint: {
-                            "fill-color": "#10b981",
-                            "fill-opacity": 0.5,
+                            "fill-color": "#007FFF",
+                            "fill-opacity": 0.8,
                         },
                     });
                     map.current.on('click', `${e[i].properties.name}`, (z) => {

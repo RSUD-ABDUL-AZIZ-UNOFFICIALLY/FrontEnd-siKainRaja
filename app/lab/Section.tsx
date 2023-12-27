@@ -60,7 +60,7 @@ export default function Section() {
     }, [keyword])
 
     return (
-        <div className='flex justify-center'>
+        <div className='justify-center'>
             <div className='section p-4 border border-accent'>
                 <div className="form-control w-full mb-3 bg-white">
                     <div className="input">

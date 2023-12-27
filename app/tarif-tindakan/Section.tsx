@@ -51,7 +51,7 @@ const Section = () => {
                         </div>
                     </div>
                     {iniData ? iniData.map((item: any, index: number) => {
-                       const randomColorClass = random[Math.floor(Math.random() * random.length)]
+                        const randomColorClass = random[Math.floor(Math.random() * random.length)]
                         return (
                             <React.Fragment key={index}>
                                 <div className={`col-span-1 card shadow-lg ${randomColorClass}`}>
