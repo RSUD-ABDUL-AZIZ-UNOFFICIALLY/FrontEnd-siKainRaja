@@ -12,7 +12,7 @@ const Map = () => {
     const [iniPosition, setPosition] = useState([108.97277018334958, 0.8952862812542529])
     const mapContainer = useRef(null);
     const map = useRef(null);
-    const [zoom] = useState(19);
+    const [zoom] = useState(17);
     maptilersdk.config.apiKey = 'YGBPAuY7utv2Y7SgHp2N';
 
     const getGeoJson = async () => {
@@ -49,6 +49,7 @@ const Map = () => {
             container: mapContainer.current,
             style: maptilersdk.MapStyle.STREETS,
             center: iniPosition,
+            fullscreenControl: true,
             zoom: zoom
         });
 
@@ -82,6 +83,7 @@ const Map = () => {
                         layout: {},
                         paint: {
                             "fill-color": "#007FFF",
+                            // "outline-color": "",
                             "fill-opacity": 0.8,
                         },
                     });
