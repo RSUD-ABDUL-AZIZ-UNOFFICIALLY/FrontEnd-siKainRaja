@@ -3,6 +3,7 @@ import './globals.css'
 import './item.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import VisitorTracker from "./component/VisitorTracker";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -39,6 +40,7 @@ export default function RootLayout({
         <meta name="viewport" content="initial-scale=1, viewport-fit=cover, width=device-width"></meta>
       </Head>
       <body className={inter.className}>{children}</body>
+      <VisitorTracker />
     </html>
   )
 }
