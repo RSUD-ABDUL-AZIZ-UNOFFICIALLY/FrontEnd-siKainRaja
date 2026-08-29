@@ -3,7 +3,7 @@ import './globals.css'
 import './item.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import VisitorTracker from "./component/VisitorTracker";
+import VisitorTracker from "./Component/VisitorTracker";
 
 const inter = Inter({ subsets: ['latin'] })
 
